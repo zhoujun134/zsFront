@@ -1,0 +1,38 @@
+
+
+
+.zj-home-comment-card-container {
+    display: flex;
+    margin-top: 2%;
+    margin-left: 2%;
+    /*flex-basis: calc(33% - 16px); !* 每个卡片占据约 1/3 宽度，减去左右间距 *!*/
+    /*margin-left: 5%;*/
+    /*width: calc((100% - 16px) / 3); !* 每个卡片占据约 1/3 宽度，减去左右间距 *!*/
+}
+
+.zj-home-comment-card-avatar-container {
+    flex: 0 0 auto; /* 不参与 flex 宽度分配 */
+    margin-right: 16px; /* 添加左右间距 */
+    display: flex;
+    max-height: 100px;
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+}
+
+.zj-home-comment-card-avatar-img {
+    width: 72px;
+    height: 72px; /* 设置头像尺寸 */
+    object-fit: cover; /* 保持比例并填满容器 */
+    border-radius: 50%; /* 圆形头像（可选） */
+}
+
+.zj-home-comment-card-info-container {
+    /*max-height: 100px;*/
+    flex: 1 1 auto; /* 占满剩余空间 */
+}
+
+.zj-home-comment-card-title {
+    margin-bottom: 0; /* 添加标题与描述之间的间距 */
+    color: dodgerblue;
+    font-size: 18px;
+}

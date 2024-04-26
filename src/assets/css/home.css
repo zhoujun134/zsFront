@@ -1,0 +1,113 @@
+@keyframes twinkling {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 500px 500px;
+    }
+}
+/*星空背景*/
+body {
+    background: url("https://zbus.top/upload/蓝色碎片飞舞-sehe.gif") repeat top left;
+    animation: twinkling 40s infinite alternate linear;
+}
+
+.el-card {
+    width: 100%;
+    filter: opacity(90%); /* 设置透明度 */
+    img* {
+        filter: opacity(100%); /* 设置透明度 */
+    }
+}
+a {
+    /* 移除下划线 */
+    text-decoration: none;
+}
+
+a:hover {
+    /* 移除下划线 */
+    text-decoration: none;
+    color: cornflowerblue;
+}
+/* 未访问的链接为蓝色 */
+a:link, a:visited {
+    color: cornflowerblue;
+}
+/* 鼠标悬停和点击时变为红色 */
+a:hover, a:active {
+    color: cornflowerblue;
+}
+
+.zj-home-container {
+    display: flex;
+    /*justify-content: center;*/
+    width: 100%;
+    height: 100vh;
+    /*background-color: bisque*/
+}
+
+.zj-home-header-container {
+    width: 100%;
+    /*height: 10%;*/
+    /*margin-top: 5%;*/
+    position: fixed;
+    justify-content: center;
+}
+.zj-home-header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.zj-home-header-menu-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.zj-home-body-container {
+    margin-top: 5%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.zj-home-main-container {
+    width: 50%;
+
+}
+
+.zj-blog-footer {
+    margin-top: 5%;
+    text-align: center;
+    line-height: 0.8;
+}
+
+.zj-home-right-container {
+    margin-left: 20px;
+    width: 20%;
+    .el-card {
+        width: 100%;
+        margin-top: 5%;
+    }
+}
+
+.zj-home-blog-toc-list-container {
+    width: 100%;
+    margin-top: 10%;
+
+    .zj-blog-toc-list-container {
+        width: 100%;
+    }
+}
+
+.zj-home-article-header-image {
+    width: 100%;
+    height: 300px;
+}
+
+
+.zj-blog-list-item {
+    width: 100%;
+    margin-top: 2%;
+    /*margin-left: 5%;*/
+}

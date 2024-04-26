@@ -1,0 +1,21 @@
+<script setup lang="ts">
+
+import Header from "@/components/Header.vue";
+import ArticleEditor from "@/components/ArticleEditor.vue";
+</script>
+
+<template>
+  <div class="zj-container">
+    <div class="zj-body-container zj-editor-container-view">
+      <el-main>
+        <article-editor />
+      </el-main>
+    </div>
+  </div>
+</template>
+
+<style scoped>
+.zj-editor-container-view {
+  width: 80%;
+}
+</style>

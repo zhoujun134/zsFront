@@ -1,0 +1,330 @@
+a {
+    /* 移除下划线 */
+    text-decoration: none;
+}
+
+a:hover {
+    /* 移除下划线 */
+    text-decoration: none;
+    color: #6e7781;
+}
+/* 未访问的链接为蓝色 */
+a:link, a:visited {
+    color: #6e7781;
+}
+/* 鼠标悬停和点击时变为红色 */
+a:hover, a:active {
+    color: deepskyblue;
+}
+
+.zj-blog-header {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    /*justify-content: center;*/
+    /*border-right: 2 px solid black;*/
+    overflow: initial;
+    position: fixed;
+    padding-left: 10px;
+    margin-top: 5%;
+}
+
+.zj-blog-header-avatar {
+    display: inline-block;
+    vertical-align: middle;
+    text-align: left;
+    font-size: large;
+    /* 移除下划线 */
+    text-decoration: none;
+    /*padding: 10px 10px;*/
+}
+
+.zj-blog-header-avatar p {
+    overflow: initial;
+    display: flex;
+    flex-direction: column;
+}
+
+.zj-el-link {
+    display: inline-block;
+    vertical-align: middle;
+    text-align: left;
+    font-size: large;
+    /* 移除下划线 */
+    text-decoration: none;
+    margin-top: 10%;
+}
+
+.zj-el-link a {
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    font-size: large;
+    /* 移除下划线 */
+    text-decoration: none;
+}
+
+.zj-el-link a:hover {
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    font-size: large;
+    /* 移除下划线 */
+    text-decoration: none;
+}
+/*.zj-container {*/
+/*    order: -2;*/
+/*    height: 100vh;*/
+/*    min-width: 0;*/
+/*    max-width: 100%;*/
+/*    flex-grow: 1;*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+
+/*}*/
+
+/*.zj-blog-main-body {*/
+/*    min-width: 0;*/
+/*    max-width: 70%;*/
+/*}*/
+
+@media screen and (min-width: 1500px) {
+    .zj-body {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        /*text-align: center;*/
+        /*background-color: aquamarine;*/
+    }
+
+    .zj-container {
+        display: flex;
+        justify-content: center;
+        width: 1500px;
+        /*background-color: blueviolet;*/
+    }
+
+    .zj-body-left {
+        width: 12%;
+        /*background-color: blue;*/
+    }
+
+    .zj-body-right {
+        width: 20%;
+        /*background-color: aquamarine;*/
+    }
+
+    .zj-body-container {
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        /*transform: translateX(20%);*/
+    }
+
+    .zj-blog-main-body {
+        width: 100%;
+    }
+
+    .zj-blog-toc-list-container {
+        /*margin-top: 5%;*/
+        /*width: 300px;*/
+        width: 100%;
+    }
+
+    .zj-blog-header {
+        width: 10%;
+    }
+}
+
+@media screen and (min-width: 922px) and (max-width: 1499px) {
+    .zj-body {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        /*text-align: center;*/
+    }
+
+    .zj-container {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .zj-body-left {
+        width: 10%;
+    }
+
+    .zj-body-right {
+        width: 20%;
+    }
+
+    .zj-body-container {
+        width: 60%;
+        display: flex;
+        justify-content: center;
+        /*transform: translateX(20%);*/
+    }
+
+    .zj-blog-main-body {
+        width: 100%;
+    }
+
+    .zj-blog-toc-list-container {
+        width: 220px;
+        .el-card {
+            --el-card-padding: 10px;
+        }
+
+    }
+
+    .zj-blog-header {
+        width: 10%;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 922px) {
+    .zj-body {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        /*text-align: center;*/
+    }
+
+    .zj-container {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .zj-body-left {
+        width: 20%;
+    }
+
+    .zj-body-right {
+        width: 0;
+        display: none;
+    }
+
+    .zj-body-container {
+        width: 70%;
+        display: flex;
+        justify-content: center;
+        /*transform: translateX(20%);*/
+    }
+
+    .zj-el-link {
+        margin-top: 5%;
+        width: 100%;
+    }
+    .zj-blog-main-body {
+        width: 100%;
+    }
+
+    .zj-blog-toc-list-container {
+        width: 100%;
+    }
+
+    .zj-blog-header {
+        width: 10%;
+    }
+    .zj-blog-header-avatar {
+        text-align: left;
+        font-size: small;
+        /* 移除下划线 */
+        text-decoration: none;
+        /*padding: 5px 5px;*/
+
+        img {
+            margin-left: 0;
+            --el-avatar-size: 50px !important;
+        }
+    }
+    .el-main {
+        --el-main-padding: 0;
+    }
+
+    .zj-blog-toc-list-container {
+        display: none !important;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .zj-blog-main-body {
+        width: 100%;
+        max-width: 100%;
+        padding: 0 10px 0 10px !important;
+        box-sizing: border-box;
+    }
+    .el-main {
+        --el-main-padding: 0;
+    }
+}
+
+.zj-blog-toc-list-container {
+    /*position: fixed; !* 保持固定定位 *!*/
+    /*top: 5%; !* 与视口顶部对齐 *!*/
+    /*width: 20%; !* 调整为合适的宽度，可根据需要调整 *!*/
+    display: flex;
+    flex-direction: column;
+}
+
+.zj-blog-list-item {
+    width: 100%;
+    margin-top: 2%;
+    /*margin-left: 5%;*/
+}
+
+
+.zj-blog-card-list-item {
+    width: 100%;
+    margin-top: 10px;
+    /*margin-left: 5%;*/
+}
+.zj-blog-list-item-header {
+    height: 250px;
+    width: 100%;
+}
+
+.zj-tag-list-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10%;
+}
+.zj-category-list-container {
+    width: 100%;
+    /*margin-top: 10px;*/
+    display: block;
+    margin-top: 10%;
+    background-color: aquamarine;
+    .el-card {
+        width: 100%;
+        p {
+            .el-tag {
+                width: 100%;
+                text-align: left;
+            }
+        }
+    }
+    /*flex-direction: column;*/
+}
+
+.zj-login-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+#zs-zj-blog-toc-container {
+    margin-top: 10%;
+}
+
+.zj-top-header-container {
+    display: block;
+    flex-direction: column;
+    width: 100%;
+    height: 200px;
+    background-color: blueviolet;
+}
