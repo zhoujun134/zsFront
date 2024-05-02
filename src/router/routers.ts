@@ -1,5 +1,4 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Home from "@/views/Home.vue";
 import ArticleEditorView from "@/views/admin/ArticleEditorView.vue";
 import CategoryArticleListView from "@/views/CategoryArticleListView.vue";
 import TagArticleListView from "@/views/TagArticleListView.vue";
@@ -12,11 +11,13 @@ export const constantRoutes = [
 //重定向--一般设置为首页
     {
         path: '/',
-        redirect: '/web'
+        redirect: '/web',
+        meta: { title: '快跑小火车' }
     },
     {
         path: '/web',
-        component: HorizontalHome
+        component: HorizontalHome,
+        meta: { title: '快跑小火车' }
     },
     {
         path: '/web/detail/:articleId',
@@ -30,15 +31,18 @@ export const constantRoutes = [
     },
     {
         path: "/editor",
-        component: ArticleEditorView
+        component: ArticleEditorView,
+        meta: { title: '编辑文章 | 快跑小火车' }
     },
     {
         path: "/friends",
         component: HorizontalFrendsView,
+        meta: { title: '友链 | 快跑小火车' }
     },
     {
         path: "/about",
         component: HorizontalAboutMeView,
+        meta: { title: '关于我 | 快跑小火车' }
     },
     {
         path: "/categoryInfo",
@@ -52,11 +56,13 @@ export const constantRoutes = [
     },
     {
         path: "/login",
-        component: () => import("@/components/LoginForm.vue")
+        component: () => import("@/components/LoginForm.vue"),
+        meta: { title: '登录 | 快跑小火车' }
     },
     {
         path: "/register",
-        component: () => import("@/components/RegisterForm.vue")
+        component: () => import("@/components/RegisterForm.vue"),
+        meta: { title: '注册 | 快跑小火车' }
     }
 ]
 
@@ -74,6 +80,12 @@ router.beforeEach((to, from, next) => {
         next(); // 确保其他路由正常工作
     }
 });
+
+
+router.afterEach((to) => {
+    let title = to.meta.title as string
+    document.title =  title || '快跑小火车';
+})
 
 export default router;
 

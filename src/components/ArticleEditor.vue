@@ -9,7 +9,7 @@ import {Plus} from '@element-plus/icons-vue'
 import {ElMessage, type UploadFile, type UploadFiles, type UploadProps, type UploadUserFile} from 'element-plus'
 import type {IResult} from "@/api/interface/IResult";
 import type {IArticleOperateReq, ISearchReq} from "@/api/interface/admin/editor";
-import {publishArticle} from "@/api/editorApi";
+import {addArticleCategory, addArticleTag, publishArticle} from "@/api/editorApi";
 import {getCategoryList, getTagList} from "@/api/articleApi";
 
 const articleInfo = reactive<IArticleOperateReq>({
@@ -146,6 +146,73 @@ onMounted(async () => {
   // 初始化标签雷彪
   searchTag("")
 })
+
+function addCategory(value: any): void {
+  console.log("add Category: ", value)
+  let categoryNames: string[] = value as string[]
+  if (categoryNames.length == 0) {
+    return;
+  }
+
+  let needAddCategoryList: ICategory[] = []
+  const existCategoryMap = new Map(categoryList.value.map(item => [item.categoryId, item.name]));
+  for (let i = 0; i < categoryNames.length; i++) {
+    if (existCategoryMap.has(categoryNames[i])) {
+      continue
+    }
+    needAddCategoryList.push({
+      name: categoryNames[i]
+    } as ICategory);
+  }
+  addArticleCategory(needAddCategoryList).then(res => {
+    if (res.code == "0") {
+      ElMessage.success({
+        message: "添加分类成功！",
+        duration: 5 * 1000
+      })
+    }
+  }).catch(error => {
+    let {message} = error
+    ElMessage.error({
+      message: "系统开小差了！请稍后重试！" + message,
+      duration: 5 * 1000
+    })
+  })
+}
+
+
+function addTag(value: any): void {
+  console.log("add Tag: ", value)
+  let tagNames: string[] = value as string[]
+  if (tagNames.length == 0) {
+    return;
+  }
+  tagNames = [tagNames[tagNames.length - 1]]
+  const existTagMap = new Map(tagList.value.map(item => [item.tagId, item.tagName]));
+  let needAddTagList: ITag[] = []
+  for (let i = 0; i < tagNames.length; i++) {
+    if (existTagMap.has(tagNames[i])) {
+      continue
+    }
+    needAddTagList.push({
+      tagName: tagNames[i]
+    } as ITag);
+  }
+  addArticleTag(needAddTagList).then(res => {
+    if (res.code == "0") {
+      ElMessage.success({
+        message: "添加文章标签成功！",
+        duration: 5 * 1000
+      })
+    }
+  }).catch(error => {
+    let {message} = error
+    ElMessage.error({
+      message: "系统开小差了！请稍后重试！" + message,
+      duration: 5 * 1000
+    })
+  })
+}
 </script>
 
 <template>
@@ -214,6 +281,7 @@ onMounted(async () => {
               :reserve-keyword="false"
               :remote='true'
               :remote-method="searchCategory"
+              @change="addCategory"
               placeholder="请选择文章分类，回车可新建"
               style="width: 60%"
           >
@@ -236,6 +304,7 @@ onMounted(async () => {
               allow-create
               :reserve-keyword="false"
               :remote='true'
+              @change="addTag"
               :remote-method="searchTag"
               placeholder="请选择文章标签，回车可新建"
               style="width: 60%"

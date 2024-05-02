@@ -55,14 +55,14 @@ const commentRules = reactive<FormRules<ICommentSubmitRequest>>({
   ],
   author: {
     required: true,
-    message: "请输入至少4个字符的昵称",
+    message: "请输入至少3个字符的昵称",
     min: 3,
     trigger: ["blur"]
   },
   content: {
     required: true,
     message: "请输入至少5个字符的评论内容",
-    min: 10,
+    min: 5,
     trigger: ["blur"]
   }
 })
@@ -109,19 +109,21 @@ const submitCommentForm = (formEl: FormInstance | undefined) => {
         ref="commentFormRef"
     >
       <el-row>
-        <el-col :span="10">
+        <el-col :span="24">
           <el-form-item label="  " prop="author">
             <el-input v-model.author="request.author" placeholder="请输入昵称"/>
           </el-form-item>
         </el-col>
-        <el-col :span="10" style="margin-left: 10px">
+      </el-row>
+      <el-row>
+        <el-col :span="24">
           <el-form-item label="  " prop="email">
             <el-input v-model.email="request.email" placeholder="请输入邮箱"/>
           </el-form-item>
         </el-col>
       </el-row>
       <el-row>
-        <el-col :span="20">
+        <el-col :span="24">
           <el-form-item label="  " prop="content">
             <el-input v-model.content="request.content"
                       type="textarea"
@@ -131,9 +133,11 @@ const submitCommentForm = (formEl: FormInstance | undefined) => {
         </el-col>
       </el-row>
       <el-row>
-        <el-form-item label="       ">
-          <el-button type="primary" @click="submitCommentForm(commentFormRef)">提交</el-button>
-        </el-form-item>
+        <el-col :span="24">
+          <el-form-item label="       ">
+            <el-button type="primary" @click="submitCommentForm(commentFormRef)">提交</el-button>
+          </el-form-item>
+        </el-col>
       </el-row>
     </el-form>
   </el-card>

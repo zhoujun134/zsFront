@@ -21,7 +21,7 @@ onMounted(() => {
   <el-header>
     <div>
       <a href="/">
-        <el-avatar :size="100" src='https://zbus.top/upload/logo.png'/>
+        <el-avatar :size="100" src='/logo.png'/>
       </a>
     </div>
     <h1>

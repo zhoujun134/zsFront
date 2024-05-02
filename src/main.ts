@@ -9,9 +9,9 @@ import hljsVuePlugin from '@highlightjs/vue-plugin'
 import 'highlight.js/styles/atom-one-dark.css' //样式
 import 'element-plus/theme-chalk/display.css'
 import 'element-plus/theme-chalk/dark/css-vars.css'
-
+import * as ElementPlusIconsVue from '@element-plus/icons-vue'
 /* import font awesome icon component */
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import {FontAwesomeIcon} from '@fortawesome/vue-fontawesome'
 
 import mavonEditor from 'mavon-editor'
 import 'mavon-editor/dist/css/index.css'
@@ -25,3 +25,6 @@ app.use(ElementPlus)
     .mount('#app');
 
 app.component('font-awesome-icon', FontAwesomeIcon)
+for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
+    app.component(key, component)
+}

@@ -6,6 +6,8 @@ import {getCommentListByArticleId, submitLikeComment} from "@/api/articleApi";
 import {onMounted, ref} from "vue";
 import type {ICommentInfo} from "@/api/interface/article/article";
 import {ElMessage} from "element-plus";
+import {ChatDotSquare, Pointer, Star, Timer, UserFilled} from "@element-plus/icons-vue";
+
 const props = defineProps({
   articleId: {
     type: String,
@@ -63,24 +65,34 @@ function submitLike(commentId: string) {
       <el-col
           v-for="(comment, index) in comments"
           :span="24"
-          style="margin-top: 2%" >
-        <el-card style="width: 100%; border: 0" shadow="hover">
+          style="margin-top: 2%">
+        <el-text style="width: 100%; border: 0" shadow="hover">
           <div class="zj-home-comment-card-container">
-            <div class="zj-home-comment-card-avatar-container">
-              <el-link :underline="false" href="/web">
-                <el-avatar shape="square" src="https://zbus.top/upload/logo.png"
-                           alt="Avatar" class="zj-home-comment-card-avatar-img"/>
-              </el-link>
-            </div>
             <div class="zj-home-comment-card-info-container">
-              <el-link :underline="false" href="/web">
-                <p class="zj-home-comment-card-title">{{comment.author}}</p>
-              </el-link>
-              <p class="description">{{comment.content}}</p>
-              <el-button type="primary"
-                         @click="changeChildSubmitFormShow(comment)">回复</el-button>
-              <el-button type="warning" @click="submitLike(comment.commentId)">点赞({{comment.likeNum}})</el-button>
-              <el-button type="success" disabled v-if="comment.createTime">{{comment.createTime}}</el-button>
+                <el-text class="zj-home-comment-card-title">
+                  <el-icon class="zj-home-comment-card-title-el-icon"><UserFilled/></el-icon>
+                  {{ comment.author }}
+                </el-text>
+              <p class="description">{{ comment.content }}</p>
+              <el-text type="primary"
+                       @click="changeChildSubmitFormShow(comment)">
+                <el-icon>
+                  <ChatDotSquare/>
+                </el-icon>
+                回复
+              </el-text>
+              <el-text style="margin-left: 10px" type="warning" @click="submitLike(comment.commentId)">
+                <el-icon>
+                  <Star/>
+                </el-icon>
+                ({{ comment.likeNum }})
+              </el-text>
+              <el-text style="margin-left: 10px" disabled v-if="comment.createTime">
+                <el-icon>
+                  <Timer/>
+                </el-icon>
+                {{ comment.createTime }}
+              </el-text>
               <horizontal-comment-submit-form-card
                   :is-show-heading="false"
                   v-if="comment.isShowSubmit"
@@ -91,23 +103,33 @@ function submitLike(commentId: string) {
               />
               <el-row style="margin-top: 2%" v-if="comment.children">
                 <el-col :span="24" v-for="(child, index) in comment.children">
-                  <el-card style="width: 100%; border: 0" shadow="hover">
+                  <el-text style="width: 100%; border: 0" shadow="hover">
                     <div class="zj-home-comment-card-container">
-                      <div class="zj-home-comment-card-avatar-container">
-                        <el-link :underline="false" href="/web">
-                          <el-avatar shape="square" src="https://zbus.top/upload/logo.png"
-                                     alt="Avatar" class="zj-home-comment-card-avatar-img"/>
-                        </el-link>
-                      </div>
                       <div class="zj-home-comment-card-info-container">
-                        <el-link :underline="false" href="/web">
-                          <p class="zj-home-comment-card-title">{{child.author}}</p>
-                        </el-link>
-                        <p class="description">{{child.content}}</p>
-                        <el-button type="primary"
-                                   @click="changeChildSubmitFormShow(child)">回复</el-button>
-                        <el-button type="warning" @click="submitLike(child.commentId)">点赞({{child.likeNum}})</el-button>
-                        <el-button type="success" disabled v-if="child.createTime">{{child.createTime}}</el-button>
+                        <el-text class="zj-home-comment-card-title">
+                          <el-icon class="zj-home-comment-card-title-el-icon"><UserFilled/></el-icon>
+                          {{ child.author }}
+                        </el-text>
+                        <p class="description">{{ child.content }}</p>
+                        <el-text type="primary"
+                                 @click="changeChildSubmitFormShow(comment)">
+                          <el-icon>
+                            <ChatDotSquare/>
+                          </el-icon>
+                          回复
+                        </el-text>
+                        <el-text style="margin-left: 10px" type="warning" @click="submitLike(child.commentId)">
+                          <el-icon>
+                            <Star/>
+                          </el-icon>
+                          ({{ child.likeNum }})
+                        </el-text>
+                        <el-text style="margin-left: 10px" disabled v-if="child.createTime">
+                          <el-icon>
+                            <Timer/>
+                          </el-icon>
+                          {{ child.createTime }}
+                        </el-text>
                         <horizontal-comment-submit-form-card
                             v-if="child.isShowSubmit"
                             :is-show-heading="false"
@@ -118,13 +140,13 @@ function submitLike(commentId: string) {
                         />
                       </div>
                     </div>
-                  </el-card>
+                  </el-text>
                 </el-col>
               </el-row>
             </div>
           </div>
 
-        </el-card>
+        </el-text>
       </el-col>
     </el-row>
   </el-card>

@@ -24,7 +24,7 @@ onMounted(() => {
   <div class="zj-blog-header hidden-xs-only">
     <div class="zj-blog-header-avatar">
       <a href="/">
-        <el-avatar :size="100" src='https://zbus.top/upload/logo.png'/>
+        <el-avatar :size="100" src='/logo.png'/>
       </a>
     </div>
     <h1>

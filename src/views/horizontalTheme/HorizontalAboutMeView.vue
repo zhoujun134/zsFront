@@ -12,13 +12,9 @@ import HorizontalArticleListComp from "@/components/horizontalTheme/HorizontalAr
 <template>
   <div class="zj-home-container">
     <el-container>
-      <div class="zj-home-header-container">
-        <el-header>
-          <el-affix :offset="10">
-            <horizontal-header-comp :active-index="'5'"/>
-          </el-affix>
-        </el-header>
-      </div>
+      <el-header style="height: auto">
+        <horizontal-header-comp/>
+      </el-header>
       <el-main class="zj-home-body-container">
         <div class="zj-home-main-container">
           <article-detail article-id="a37b457a97974cccbdabbfc224dac7bb" />

@@ -14,13 +14,9 @@ import ArticleDetail from "@/components/ArticleDetail.vue";
 <template>
   <div class="zj-home-container">
     <el-container>
-      <div class="zj-home-header-container">
-        <el-header>
-          <el-affix :offset="10">
+        <el-header style="height: auto">
             <horizontal-header-comp/>
-          </el-affix>
         </el-header>
-      </div>
 
       <el-main class="zj-home-body-container">
         <div class="zj-home-main-container">
@@ -32,11 +28,11 @@ import ArticleDetail from "@/components/ArticleDetail.vue";
           </el-card>
         </div>
         <div class="zj-home-right-container">
-          <el-affix :offset="80">
+<!--          <el-affix :offset="80">-->
             <search-card></search-card>
             <horizontal-tag-card-comp/>
             <horizontal-category-card-comp/>
-          </el-affix>
+<!--          </el-affix>-->
         </div>
       </el-main>
     </el-container>

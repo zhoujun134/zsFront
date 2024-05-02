@@ -10,6 +10,8 @@ import {ref} from "vue";
 import type {IFriendInfo} from "@/api/interface/home";
 import {homeFriends} from "@/api/homeApi";
 import HorizontalArticleListComp from "@/components/horizontalTheme/HorizontalArticleListComp.vue";
+import HorizontalCommentComp from "@/components/horizontalTheme/HorizontalCommentComp.vue";
+import ArticleDetail from "@/components/ArticleDetail.vue";
 
 const friendsGroup = ref<Map<string, IFriendInfo[]>>()
 
@@ -21,23 +23,22 @@ homeFriends().then(res => {
 <template>
   <div class="zj-home-container">
     <el-container>
-      <div class="zj-home-header-container">
-        <el-header>
-          <el-affix :offset="10">
-            <horizontal-header-comp  :active-index="'4'"/>
-          </el-affix>
-        </el-header>
-      </div>
+      <el-header style="height: auto">
+        <horizontal-header-comp/>
+      </el-header>
       <el-main class="zj-home-body-container">
         <div class="zj-home-main-container">
-          <el-card v-for="(friendList, key) in friendsGroup" :key="key" class="zj-home-friends-card-group">
-            <template #header>{{key}}</template>
+          <el-card v-for="(friendList, key) in friendsGroup" :key="key"
+                   class="zj-home-friends-card-group"
+          >
+            <template #header>{{ key }}</template>
             <div class="zj-home-friends-container">
-                <horizontal-friend-card-comp
-                    v-for="(friendInfo, key2) in friendList"
-                    :friend-info="friendInfo"/>
+              <horizontal-friend-card-comp
+                  v-for="(friendInfo, key2) in friendList"
+                  :friend-info="friendInfo"/>
             </div>
           </el-card>
+          <horizontal-comment-comp article-id="friends-page"/>
 
           <el-card class="zj-blog-footer">
             <p>© 2024- zbusTop-Z不殊</p>

@@ -8,7 +8,7 @@
 }
 /*星空背景*/
 body {
-    background: url("https://zbus.top/upload/蓝色碎片飞舞-sehe.gif") repeat top left;
+    /*background: url("https://zbus.top/upload/蓝色碎片飞舞-sehe.gif") repeat top left;*/
     animation: twinkling 40s infinite alternate linear;
 }
 
@@ -48,32 +48,70 @@ a:hover, a:active {
 
 .zj-home-header-container {
     width: 100%;
-    /*height: 10%;*/
-    /*margin-top: 5%;*/
+    background-color: cornflowerblue;
     position: fixed;
     justify-content: center;
 }
-.zj-home-header {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
-.zj-home-header-menu-container {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
 
-.zj-home-body-container {
-    margin-top: 5%;
-    width: 100%;
-    display: flex;
-    justify-content: center;
+.zj-home-header-xs {
+    display: none !important;
 }
 
 .zj-home-main-container {
-    width: 50%;
+    width: 60%;
+}
 
+
+@media screen and (min-width: 1599px) {
+    .zj-home-main-container {
+        width: 40% !important;
+    }
+    .zj-home-right-container {
+        margin-left: 20px;
+        width: 15% !important;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .zj-home-right-container {
+        margin-left: 20px;
+        width: 15% !important;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .zj-home-header-md {
+        display: none !important;
+    }
+    .zj-home-header-xs {
+        display: flex !important;
+        justify-content: right;
+        width: 100%;
+        .el-menu-item {
+            text-align: right;
+        }
+    }
+    .zj-home-main-container {
+        margin-top: 5%;
+        width: 100% !important;
+    }
+    .zj-home-right-container {
+        display: none !important;
+    }
+}
+
+.zj-home-header-md {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    /*margin-bottom: 2%;*/
+}
+
+.zj-home-body-container {
+    /*margin-top: 5%;*/
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 .zj-blog-footer {
@@ -93,7 +131,10 @@ a:hover, a:active {
 
 .zj-home-blog-toc-list-container {
     width: 100%;
-    margin-top: 10%;
+    .el-card {
+        width: 100%;
+    }
+    /*margin-top: 10%;*/
 
     .zj-blog-toc-list-container {
         width: 100%;

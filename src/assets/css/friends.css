@@ -8,7 +8,7 @@
 
 .zj-home-friends-card {
     max-width: 300px;
-    max-height: 150px;
+    max-height: 250px;
     display: flex;
     margin-top: 2%;
     margin-left: 2%;
@@ -48,6 +48,7 @@
     margin-bottom: 0; /* 添加标题与描述之间的间距 */
 }
 .zj-home-friends-card-group {
+    border: 0;
     margin-top: 5%;
 }
 /*.zj-home-comment-card-container {*/

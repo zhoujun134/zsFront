@@ -28,13 +28,9 @@ onMounted(async () => {
 <template>
   <div class="zj-home-container">
     <el-container>
-      <div class="zj-home-header-container">
-        <el-header>
-          <el-affix :offset="10">
-            <horizontal-header-comp />
-          </el-affix>
-        </el-header>
-      </div>
+      <el-header style="height: auto">
+        <horizontal-header-comp/>
+      </el-header>
       <el-main class="zj-home-body-container">
         <div class="zj-home-main-container">
           <article-detail :article-id="articleId"></article-detail>
@@ -52,7 +48,7 @@ onMounted(async () => {
           <el-affix :offset="80">
             <div v-if="tocList.length > 0"
                  class="zj-home-blog-toc-list-container">
-              <el-aside>
+              <el-aside style="width: 100%">
                 <article-toc :toc-list="tocList"/>
               </el-aside>
             </div>

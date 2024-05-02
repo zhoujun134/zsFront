@@ -4,8 +4,10 @@ import {onMounted, ref} from "vue";
 import type {IFriendInfo, IHomeInfo} from "@/api/interface/home";
 import {homeIndex} from "@/api/homeApi";
 import {useRoute} from "vue-router";
-import { useToggle } from '@vueuse/shared'
+import {useToggle} from '@vueuse/shared'
 import {useDark} from "@vueuse/core";
+import {Operation} from "@element-plus/icons-vue";
+
 const isDark = useDark()
 const toggleDark = useToggle(isDark)
 
@@ -35,12 +37,79 @@ onMounted(() => {
     }
   })
 })
+
+const isMenuCollapsed = ref(false);
+
+function handleResize() {
+  // 根据屏幕尺寸更新isMenuCollapsed的值
+  // 例如，如果屏幕宽度小于某个阈值，则折叠菜单
+  const width = window.innerWidth;
+  isMenuCollapsed.value = width < 768;
+}
+
+handleResize()
+
 </script>
 
 <template>
   <div class="zj-home-header">
+    <div class="zj-home-header-xs">
+        <el-menu
+            style="width: 100%"
+            :default-active="activeIndex"
+            mode="vertical"
+            :popper-offset="5"
+            :ellipsis="false"
+
+        >
+          <el-sub-menu index="2-">
+            <template #title>
+              <el-link :underline="false" href="/web">
+                <img
+                    style="width: 50px"
+                    src="/logo.png"
+                    alt="zBus logo"
+                /><span style="margin-left: 10px;">快跑小火车</span>
+              </el-link>
+            </template>
+            <el-menu-item index="2-1" disabled>
+              <el-tooltip
+                  class="box-item"
+                  effect="dark"
+                  content="建设中..."
+                  placement="top"
+              >
+                <el-link :underline="false" href="/web">归档</el-link>
+              </el-tooltip>
+            </el-menu-item>
+            <el-menu-item index="2-2">
+              <el-link :underline="false" href="/web?categoryId=zs-suibi&categoryName=随笔">随笔</el-link>
+            </el-menu-item>
+            <el-menu-item index="2-3" v-if="homeIndexInfo.login">
+              <el-link :underline="false" href="/editor">发布文章</el-link>
+            </el-menu-item>
+            <el-menu-item index="2-4">
+              <el-link :underline="false" href="/friends">友链</el-link>
+            </el-menu-item>
+            <el-menu-item index="2-5">
+              <el-link :underline="false" href="/about">关于我</el-link>
+            </el-menu-item>
+            <el-menu-item index="2-6">
+              <el-link :underline="false" href="https://afdian.net/a/zbusTop">为我发电</el-link>
+            </el-menu-item>
+            <el-menu-item index="2-7" @click="toggleDark()">
+              <span v-if="isDark">white</span>
+              <span v-if="!isDark">dark</span>
+            </el-menu-item>
+          </el-sub-menu>
+
+        </el-menu>
+
+
+    </div>
+
     <el-menu
-        class="zj-home-header-menu-container"
+        class="zj-home-header-md"
         :default-active="activeIndex"
         mode="horizontal"
         :ellipsis="false"
@@ -49,7 +118,7 @@ onMounted(() => {
         <el-link :underline="false" href="/web">
           <img
               style="width: 50px"
-              src="https://zbus.top/upload/logo.png"
+              src="/logo.png"
               alt="zBus logo"
           />
         </el-link>
@@ -80,12 +149,10 @@ onMounted(() => {
         <el-link :underline="false" href="https://afdian.net/a/zbusTop">为我发电</el-link>
       </el-menu-item>
       <el-menu-item index="7" @click="toggleDark()">
-          <span v-if="isDark">white</span>
-          <span v-if="!isDark">dark</span>
+        <span v-if="isDark">white</span>
+        <span v-if="!isDark">dark</span>
       </el-menu-item>
     </el-menu>
-  </div>
-  <div style="height: 10px;">
   </div>
 </template>
 

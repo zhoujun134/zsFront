@@ -18,7 +18,7 @@ defineProps({
 
 <template>
 
-  <el-card class="zj-home-friends-card">
+  <el-card class="zj-home-friends-card" shadow="never">
     <div class="zj-home-friends-card-content">
       <div class="zj-home-friends-card-avatar-container">
         <el-link :underline="false" href="/web">

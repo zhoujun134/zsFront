@@ -9,7 +9,6 @@ import type {
     ITag
 } from "@/api/interface/article/article";
 import type {ISearchReq} from "@/api/interface/admin/editor";
-import type {IFriendInfo} from "@/api/interface/home";
 import {ElMessage} from "element-plus";
 
 export async function getArticleList(reqDto: ArticleListReq): Promise<IResult<Page<IArticle>>> {

@@ -4,6 +4,7 @@ import type {ArticleListReq, IArticle, ICategory, ITag} from "@/api/interface/ar
 import type {Page} from "@/api/interface/IResult";
 import {getArticleList, getDefaultPageListIArticle} from "@/api/articleApi";
 import {useRoute} from "vue-router";
+import {Timer} from "@element-plus/icons-vue";
 
 defineProps<{
   categoryId?: string,
@@ -118,14 +119,14 @@ const types = ['primary', 'success', 'info', 'warning', 'danger']
                v-for="(post, index) in articlePageInfo.records"
                :key="post.articleId"
       >
-        <router-link v-if="post.headerImageUrl"
-                     :to="'/web/detail/' + post.articleId">
-          <div class="card-header">
-            <el-image
-                class="zj-home-article-header-image"
-                :src="post.headerImageUrl"/>
-          </div>
-        </router-link>
+<!--        <router-link v-if="post.headerImageUrl"-->
+<!--                     :to="'/web/detail/' + post.articleId">-->
+<!--          <div class="card-header">-->
+<!--            <el-image-->
+<!--                class="zj-home-article-header-image"-->
+<!--                :src="post.headerImageUrl"/>-->
+<!--          </div>-->
+<!--        </router-link>-->
         <router-link :to="'/web/detail/' + post.articleId">
           <h2 class="post-title">{{ post.title }}</h2>
         </router-link>
@@ -133,15 +134,16 @@ const types = ['primary', 'success', 'info', 'warning', 'danger']
            class="post-content">
           {{ post.articleAbstract }}
         </p>
-        <hr v-if="post.createTime || post.tagList"/>
+        <hr v-if="post.articleAbstract"/>
         <div class="flex gap-2" v-if="post.createTime || post.tagList">
-          <el-tag v-if="post.createTime"
+          <el-text v-if="post.createTime"
               style="margin-left: 10px"
               effect="dark"
               round
           >
+            <el-icon><Timer /></el-icon>
             创建时间: {{ post.createTime }}
-          </el-tag>
+          </el-text>
           <el-tag v-if="post.tagList"
               style="margin-left: 10px"
               v-for="item in post.tagList"
@@ -150,7 +152,7 @@ const types = ['primary', 'success', 'info', 'warning', 'danger']
               effect="dark"
               round
           >
-            {{ item.tagId }}
+            {{ item.tagName }}
           </el-tag>
         </div>
       </el-card>
