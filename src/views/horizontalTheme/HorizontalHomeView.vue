@@ -37,6 +37,9 @@ useHead({
           <el-affix>
             <horizontal-header-comp/>
           </el-affix>
+
+          <horizontal-image-card-comp />
+
           <introduction-card-comp />
           <horizontal-article-list-comp/>
           <el-card class="zj-blog-footer">

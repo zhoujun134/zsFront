@@ -40,8 +40,8 @@ useHead({
           <el-affix>
             <horizontal-header-comp active-index="1"/>
           </el-affix>
+          <horizontal-image-card-comp />
           <horizontal-archive-card-comp />
-
           <el-card class="zj-blog-footer">
             <p>© 2024- zbusTop-Z不殊</p>
             <p>京ICP备2023022073号-1</p>
@@ -50,7 +50,6 @@ useHead({
         </div>
         <div class="zj-home-right-container">
           <el-affix :offset="80">
-            <horizontal-image-card-comp />
             <search-card></search-card>
             <horizontal-tag-card-comp/>
             <horizontal-category-card-comp/>

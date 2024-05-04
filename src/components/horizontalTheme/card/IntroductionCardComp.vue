@@ -1,10 +1,8 @@
 <script setup lang="ts">
 
-import HorizontalImageCardComp from "@/components/horizontalTheme/card/HorizontalImageCardComp.vue";
 </script>
 
 <template>
-  <horizontal-image-card-comp />
   <div class="zj-home-main-introduce-card-body" id="zj-home-main-introduce-card-body">
     <el-card class="zj-home-main-introduce-card">
       <template #header><h2>欢迎来到我的小站</h2>本博客是自己手写的</template>
