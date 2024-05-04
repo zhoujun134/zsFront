@@ -123,41 +123,43 @@ function onCurrentPageChange(currentPage: number): void {
                  type="primary" disabled>{{ tagInfo.tagName }}</el-button>
     </div>
   </div>
-  <el-card class="zj-blog-list-item"
-           v-for="(post, index) in articlePageInfo.records"
-           :key="post.articleId"
-  >
-    <router-link :to="'/web/detail/' + post.articleId">
-      <h2 class="post-title">{{ post.title }}</h2>
-    </router-link>
-    <p v-if="post.articleAbstract"
-       class="post-content">
-      {{ post.articleAbstract }}
-    </p>
-    <hr v-if="post.articleAbstract"/>
-    <div class="flex gap-2" v-if="post.createTime || post.tagList">
-      <el-text v-if="post.createTime"
-               style="margin-left: 10px"
-               effect="dark"
-               round
-      >
-        <el-icon>
-          <Timer/>
-        </el-icon>
-        创建时间: {{ post.createTime }}
-      </el-text>
-      <el-tag v-if="post.tagList"
-              style="margin-left: 10px"
-              v-for="item in post.tagList"
-              :key="item.tagId"
-             type="primary"
-              effect="dark"
-              round
-      >
-        {{ item.tagName }}
-      </el-tag>
-    </div>
-  </el-card>
+  <div style="display: block">
+    <el-card class="zj-blog-list-item"
+             v-for="(post, index) in articlePageInfo.records"
+             :key="post.articleId"
+    >
+      <router-link :to="'/web/detail/' + post.articleId">
+        <h2 class="post-title">{{ post.title }}</h2>
+      </router-link>
+      <p v-if="post.articleAbstract"
+         class="post-content">
+        {{ post.articleAbstract }}
+      </p>
+      <hr v-if="post.articleAbstract"/>
+      <div class="flex gap-2" v-if="post.createTime || post.tagList">
+        <el-text v-if="post.createTime"
+                 style="margin-left: 10px"
+                 effect="dark"
+                 round
+        >
+          <el-icon>
+            <Timer/>
+          </el-icon>
+          创建时间: {{ post.createTime }}
+        </el-text>
+        <el-tag v-if="post.tagList"
+                style="margin-left: 10px"
+                v-for="item in post.tagList"
+                :key="item.tagId"
+                type="primary"
+                effect="dark"
+                round
+        >
+          {{ item.tagName }}
+        </el-tag>
+      </div>
+    </el-card>
+  </div>
   <!--  分页组件-->
   <div style="display: flex; justify-content: center; margin-top: 5%">
     <!--                   :hide-on-single-page="true"-->

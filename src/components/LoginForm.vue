@@ -1,27 +1,29 @@
 <template>
-  <el-container>
-    <el-form
-        label-width="auto"
-        :model="form"
-        style="max-width: 600px"
-    >
-      <el-form-item label="用户名">
-        <el-input v-model="form.username" />
-      </el-form-item>
-      <el-form-item label="密码">
-        <el-input v-model="form.password" type="password" :show-password="true" />
-      </el-form-item>
-      <el-form-item label="       ">
-        <el-button type="primary" @click="handleLogin">登录</el-button>
-        <router-link to="/register" style="margin-left: 20px" >注册</router-link>
-      </el-form-item>
-    </el-form>
-    <el-card v-if="loginForm.loginId">
-      <p>loginId: {{ loginForm.loginId }}</p>
-      <p>tokenName: {{ loginForm.tokenName }}</p>
-      <p>tokenValue: {{ loginForm.tokenValue }}</p>
-      <el-link href="/web">回到首页</el-link>
-    </el-card>
+  <el-container class="zj-blog-login-container">
+    <div>
+      <el-form
+          label-width="auto"
+          :model="form"
+          style="max-width: 600px"
+      >
+        <el-form-item label="用户名">
+          <el-input v-model="form.username" />
+        </el-form-item>
+        <el-form-item label="密码">
+          <el-input v-model="form.password" type="password" :show-password="true" />
+        </el-form-item>
+        <el-form-item label="       ">
+          <el-button type="primary" @click="handleLogin">登录</el-button>
+          <router-link to="/register" style="margin-left: 20px" >注册</router-link>
+        </el-form-item>
+      </el-form>
+      <el-card v-if="loginForm.loginId">
+        <p>loginId: {{ loginForm.loginId }}</p>
+        <p>tokenName: {{ loginForm.tokenName }}</p>
+        <p>tokenValue: {{ loginForm.tokenValue }}</p>
+        <el-link href="/web">回到首页</el-link>
+      </el-card>
+    </div>
   </el-container>
 
 </template>
@@ -119,4 +121,11 @@ function handleLogin() {
 
 
 <style scoped>
+
+.zj-blog-login-container {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center; /* 垂直居中 */
+}
 </style>

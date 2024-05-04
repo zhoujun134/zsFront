@@ -27,8 +27,8 @@ const types = ["success", "primary", "warning"]
             :color="'cornflowerblue'"
             :timestamp="archiveInfo.createTimeStr"
         >
-          <router-link :to="'/web/detail/' + archiveInfo.articleId">
-            <h3 class="post-title">{{ archiveInfo.title }}</h3>
+          <router-link style="margin: 0 0" :to="'/web/detail/' + archiveInfo.articleId">
+            <h3>{{ archiveInfo.title }}</h3>
           </router-link>
         </el-timeline-item>
       </el-timeline>
@@ -38,4 +38,7 @@ const types = ["success", "primary", "warning"]
 
 <style scoped>
 
+.el-timeline-item {
+  padding-bottom: 0;
+}
 </style>
