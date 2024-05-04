@@ -17,14 +17,16 @@ import './assets/css/css-vars.css'
 import mavonEditor from 'mavon-editor'
 import 'mavon-editor/dist/css/index.css'
 
-const app = createApp(App);
+import { createHead } from '@unhead/vue'
+const head = createHead()
 
+const app = createApp(App);
 app.use(ElementPlus)
     .use(router)
     .use(hljsVuePlugin)
     .use(mavonEditor)
+    .use(head)
     .mount('#app');
-
 app.component('font-awesome-icon', FontAwesomeIcon)
 for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
     app.component(key, component)

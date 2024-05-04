@@ -7,6 +7,25 @@ import HorizontalCategoryCardComp from "@/components/horizontalTheme/HorizontalC
 import HorizontalTagCardComp from "@/components/horizontalTheme/HorizontalTagCardComp.vue";
 import IntroductionCardComp from "@/components/horizontalTheme/card/IntroductionCardComp.vue";
 import HorizontalImageCardComp from "@/components/horizontalTheme/card/HorizontalImageCardComp.vue";
+import {useHead} from "@unhead/vue";
+
+useHead({
+  title: '快跑小火车',
+  meta: [
+    {
+      name: '快跑小火车',
+      content: '快跑小火车, zhoujun134',
+    },
+    {
+      name: 'zhoujun134',
+      content: 'zhoujun134, 快跑小火车',
+    },
+    {
+      name: '手写博客',
+      content: '手写博客, vue3 ts java',
+    },
+  ],
+})
 
 </script>
 
@@ -28,7 +47,6 @@ import HorizontalImageCardComp from "@/components/horizontalTheme/card/Horizonta
         </div>
         <div class="zj-home-right-container">
           <el-affix :offset="80">
-            <horizontal-image-card-comp />
             <search-card></search-card>
             <horizontal-tag-card-comp/>
             <horizontal-category-card-comp/>

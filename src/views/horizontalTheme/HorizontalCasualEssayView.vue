@@ -1,19 +1,12 @@
 <script setup lang="ts">
 
-import ArticleDetail from "@/components/ArticleDetail.vue";
-import ArticleToc from "@/components/ArticleToc.vue";
 import {onMounted, ref} from "vue";
 import {generateTocList, type TocItem} from "@/api/views/tocify";
 import HorizontalHeaderComp from "@/components/horizontalTheme/HorizontalHeaderComp.vue";
 import SearchCard from "@/components/SearchCard.vue";
 import HorizontalTagCardComp from "@/components/horizontalTheme/HorizontalTagCardComp.vue";
 import HorizontalCategoryCardComp from "@/components/horizontalTheme/HorizontalCategoryCardComp.vue";
-import HorizontalCommentComp from "@/components/horizontalTheme/HorizontalCommentComp.vue";
 import HorizontalArticleListComp from "@/components/horizontalTheme/HorizontalArticleListComp.vue";
-
-defineProps<{
-  articleId: string
-}>()
 
 const tocList = ref([] as TocItem[])
 onMounted(async () => {
@@ -23,6 +16,29 @@ onMounted(async () => {
   }, 500)
 })
 
+import {useHead} from "@unhead/vue";
+
+useHead({
+  title: '随笔 | 快跑小火车',
+  meta: [
+    {
+      name: '快跑小火车随笔',
+      content: '快跑小火车, 随笔',
+    },
+    {
+      name: '快跑小火车',
+      content: '快跑小火车, zhoujun134',
+    },
+    {
+      name: 'zhoujun134',
+      content: 'zhoujun134, 快跑小火车',
+    },
+    {
+      name: '手写博客',
+      content: '手写博客, vue3 ts java',
+    },
+  ],
+})
 </script>
 
 <template>

@@ -7,6 +7,28 @@ import HorizontalHeaderComp from "@/components/horizontalTheme/HorizontalHeaderC
 import ArticleDetail from "@/components/ArticleDetail.vue";
 import HorizontalCommentComp from "@/components/horizontalTheme/HorizontalCommentComp.vue";
 import HorizontalArticleListComp from "@/components/horizontalTheme/HorizontalArticleListComp.vue";
+import {useHead} from "@unhead/vue";
+useHead({
+  title: '关于我 | 快跑小火车',
+  meta: [
+    {
+      name: '关于快跑小火车',
+      content: '快跑小火车, 关于快跑小火车的故事',
+    },
+    {
+      name: '快跑小火车',
+      content: '快跑小火车, zhoujun134',
+    },
+    {
+      name: 'zhoujun134',
+      content: 'zhoujun134, 快跑小火车',
+    },
+    {
+      name: '手写博客',
+      content: '手写博客, vue3 ts java',
+    },
+  ],
+})
 </script>
 
 <template>

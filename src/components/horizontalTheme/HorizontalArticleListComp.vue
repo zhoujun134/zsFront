@@ -79,6 +79,13 @@ function articleList(categoryId?: string, tagId?: string, keyword?: string, curr
   }
   getArticleList(request.value).then(result => {
     articlePageInfo.value = result.data;
+    if (categoryInfo.value.categoryId || tagInfo.value.tagId) {
+      let elementById = document.getElementById("zj-home-main-introduce-card-body");
+      if (elementById) {
+        console.log("11111")
+        elementById.style.display = "none";
+      }
+    }
   }).catch(error => {
     return getDefaultPageListIArticle("获取页面文章出错了")
   })
@@ -99,40 +106,27 @@ onMounted(() => {
   articleList(categoryInfo.value.categoryId, tagInfo.value.tagId, keyword)
 })
 
-function onChangePageSizeAndCurrent(currentPage: number, pageSize: number): void {
-  console.log("currentPage and pageSize: ", currentPage, pageSize);
-  articleListPageChange(currentPage)
-}
-
 function onCurrentPageChange(currentPage: number): void {
-  console.log("onCurrentPageChange currentPage: ", currentPage);
   articleListPageChange(currentPage)
 }
-
-
-const types = ['primary', 'success', 'info', 'warning', 'danger']
 
 </script>
 
 <template>
   <div v-if="categoryInfo.name || tagInfo.tagName">
-    <div class="zj-article-header-category-tag">
-      <el-button v-if="categoryInfo.name" type="primary" disabled>{{ categoryInfo.name }}</el-button>
-      <el-button v-if="tagInfo.tagName" type="primary" disabled>{{ tagInfo.tagName }}</el-button>
+    <div class="zj-article-header-category-tag" >
+      <el-button v-if="categoryInfo.name"
+                 :id="categoryInfo.name"
+                 type="primary" disabled>{{ categoryInfo.name }}</el-button>
+      <el-button v-if="tagInfo.tagName"
+                 :id="tagInfo.tagName"
+                 type="primary" disabled>{{ tagInfo.tagName }}</el-button>
     </div>
   </div>
   <el-card class="zj-blog-list-item"
            v-for="(post, index) in articlePageInfo.records"
            :key="post.articleId"
   >
-    <!--        <router-link v-if="post.headerImageUrl"-->
-    <!--                     :to="'/web/detail/' + post.articleId">-->
-    <!--          <div class="card-header">-->
-    <!--            <el-image-->
-    <!--                class="zj-home-article-header-image"-->
-    <!--                :src="post.headerImageUrl"/>-->
-    <!--          </div>-->
-    <!--        </router-link>-->
     <router-link :to="'/web/detail/' + post.articleId">
       <h2 class="post-title">{{ post.title }}</h2>
     </router-link>
@@ -156,7 +150,7 @@ const types = ['primary', 'success', 'info', 'warning', 'danger']
               style="margin-left: 10px"
               v-for="item in post.tagList"
               :key="item.tagId"
-             type="warning"
+             type="primary"
               effect="dark"
               round
       >

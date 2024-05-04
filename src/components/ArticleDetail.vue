@@ -7,8 +7,9 @@ import '../assets/css/detail/detail.css'
 import {getArticleDetail} from "@/api/articleApi";
 import type {IArticle} from "@/api/interface/article/article";
 import {dealWithCopy, marked} from "@/api/views/zjMarked";
-import {Calendar, Timer} from "@element-plus/icons-vue";
-
+import {Calendar} from "@element-plus/icons-vue";
+import {useHead} from "@unhead/vue";
+import { renderDOMHead } from '@unhead/dom'
 const props = defineProps<{
   articleId: string
 }>()
@@ -31,6 +32,27 @@ onMounted(async () => {
   }, 500)
 })
 
+useHead({
+  title: '详情 | 快跑小火车',
+  meta: [
+    {
+      name: '关于快跑小火车',
+      content: '快跑小火车, 关于快跑小火车的故事',
+    },
+    {
+      name: '快跑小火车',
+      content: '快跑小火车, zhoujun134',
+    },
+    {
+      name: 'zhoujun134',
+      content: 'zhoujun134, 快跑小火车',
+    },
+    {
+      name: '手写博客',
+      content: '手写博客, vue3 ts java',
+    },
+  ],
+})
 </script>
 
 <template>

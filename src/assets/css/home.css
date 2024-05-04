@@ -77,12 +77,12 @@ a:hover, a:active {
 
 .zj-home-main-introduce-card-body {
     display: flex;
+    justify-content: center;
 }
 
 .zj-home-main-introduce-card {
     margin-top: 2%;
-    margin-left: 1%;
-    max-width: 49%;
+    width: 100%;
 }
 
 @media screen and (min-width: 1599px) {
@@ -145,7 +145,8 @@ a:hover, a:active {
     }
 
     .zj-home-main-introduce-card-body {
-        display: block;
+        display: flex;
+        justify-content: center;
     }
 
     .el-main {

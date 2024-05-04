@@ -18,6 +18,30 @@ const friendsGroup = ref<Map<string, IFriendInfo[]>>()
 homeFriends().then(res => {
   friendsGroup.value = res.data as Map<string, IFriendInfo[]>
 })
+
+import {useHead} from "@unhead/vue";
+
+useHead({
+  title: '友链 | 快跑小火车',
+  meta: [
+    {
+      name: '快跑小火车友链',
+      content: '快跑小火车, 欢迎友链',
+    },
+    {
+      name: '快跑小火车',
+      content: '快跑小火车, zhoujun134',
+    },
+    {
+      name: 'zhoujun134',
+      content: 'zhoujun134, 快跑小火车',
+    },
+    {
+      name: '手写博客',
+      content: '手写博客, vue3 ts java',
+    },
+  ],
+})
 </script>
 
 <template>

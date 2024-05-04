@@ -24,7 +24,7 @@ const types = ["success", "primary", "warning"]
             v-for="(archiveInfo, index) in archiveList"
             :key="index"
             type="primary"
-            icon="MoreFilled"
+            :color="'cornflowerblue'"
             :timestamp="archiveInfo.createTimeStr"
         >
           <router-link :to="'/web/detail/' + archiveInfo.articleId">

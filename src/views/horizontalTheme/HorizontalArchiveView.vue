@@ -7,6 +7,29 @@ import HorizontalImageCardComp from "@/components/horizontalTheme/card/Horizonta
 import HorizontalHeaderComp from "@/components/horizontalTheme/HorizontalHeaderComp.vue";
 import HorizontalArchiveCardComp from "@/components/horizontalTheme/card/HorizontalArchiveCardComp.vue";
 
+import {useHead} from "@unhead/vue";
+
+useHead({
+  title: '归档 | 快跑小火车',
+  meta: [
+    {
+      name: '快跑小火车归档',
+      content: '快跑小火车, 归档',
+    },
+    {
+      name: '快跑小火车',
+      content: '快跑小火车, zhoujun134',
+    },
+    {
+      name: 'zhoujun134',
+      content: 'zhoujun134, 快跑小火车',
+    },
+    {
+      name: '手写博客',
+      content: '手写博客, vue3 ts java',
+    },
+  ],
+})
 </script>
 
 <template>
