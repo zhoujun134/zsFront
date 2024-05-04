@@ -12,6 +12,7 @@ import 'element-plus/theme-chalk/dark/css-vars.css'
 import * as ElementPlusIconsVue from '@element-plus/icons-vue'
 /* import font awesome icon component */
 import {FontAwesomeIcon} from '@fortawesome/vue-fontawesome'
+import './assets/css/css-vars.css'
 
 import mavonEditor from 'mavon-editor'
 import 'mavon-editor/dist/css/index.css'

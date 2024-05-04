@@ -52,6 +52,10 @@ function submitLike(commentId: string) {
   })
 }
 
+function dealComment(comment: string) {
+  return comment.replace(/\n/g, '<br>');
+}
+
 </script>
 
 <template>
@@ -65,7 +69,7 @@ function submitLike(commentId: string) {
       <el-col
           v-for="(comment, index) in comments"
           :span="24"
-          style="margin-top: 2%">
+          style="margin-top: 1%">
         <el-text style="width: 100%; border: 0" shadow="hover">
           <div class="zj-home-comment-card-container">
             <div class="zj-home-comment-card-info-container">
@@ -73,26 +77,30 @@ function submitLike(commentId: string) {
                   <el-icon class="zj-home-comment-card-title-el-icon"><UserFilled/></el-icon>
                   {{ comment.author }}
                 </el-text>
-              <p class="description">{{ comment.content }}</p>
-              <el-text type="primary"
-                       @click="changeChildSubmitFormShow(comment)">
-                <el-icon>
-                  <ChatDotSquare/>
-                </el-icon>
-                回复
-              </el-text>
-              <el-text style="margin-left: 10px" type="warning" @click="submitLike(comment.commentId)">
-                <el-icon>
-                  <Star/>
-                </el-icon>
-                ({{ comment.likeNum }})
-              </el-text>
-              <el-text style="margin-left: 10px" disabled v-if="comment.createTime">
-                <el-icon>
-                  <Timer/>
-                </el-icon>
-                {{ comment.createTime }}
-              </el-text>
+              <div v-html="dealComment(comment.content)">
+              </div>
+              <div style="margin-top: 5px">
+                <el-text type="primary"
+                         @click="changeChildSubmitFormShow(comment)">
+                  <el-icon>
+                    <ChatDotSquare/>
+                  </el-icon>
+                  回复
+                </el-text>
+                <el-text style="margin-left: 10px" type="warning" @click="submitLike(comment.commentId)">
+                  <el-icon>
+                    <Star/>
+                  </el-icon>
+                  ({{ comment.likeNum }})
+                </el-text>
+                <el-text style="margin-left: 10px" disabled v-if="comment.createTime">
+                  <el-icon>
+                    <Timer/>
+                  </el-icon>
+                  {{ comment.createTime }}
+                </el-text>
+              </div>
+
               <horizontal-comment-submit-form-card
                   :is-show-heading="false"
                   v-if="comment.isShowSubmit"
@@ -110,26 +118,31 @@ function submitLike(commentId: string) {
                           <el-icon class="zj-home-comment-card-title-el-icon"><UserFilled/></el-icon>
                           {{ child.author }}
                         </el-text>
-                        <p class="description">{{ child.content }}</p>
-                        <el-text type="primary"
-                                 @click="changeChildSubmitFormShow(comment)">
-                          <el-icon>
-                            <ChatDotSquare/>
-                          </el-icon>
-                          回复
-                        </el-text>
-                        <el-text style="margin-left: 10px" type="warning" @click="submitLike(child.commentId)">
-                          <el-icon>
-                            <Star/>
-                          </el-icon>
-                          ({{ child.likeNum }})
-                        </el-text>
-                        <el-text style="margin-left: 10px" disabled v-if="child.createTime">
-                          <el-icon>
-                            <Timer/>
-                          </el-icon>
-                          {{ child.createTime }}
-                        </el-text>
+
+                        <div v-html="dealComment(child.content)">
+                        </div>
+                        <div style="margin-top: 5px">
+                          <el-text type="primary"
+                                   @click="changeChildSubmitFormShow(comment)">
+                            <el-icon>
+                              <ChatDotSquare/>
+                            </el-icon>
+                            回复
+                          </el-text>
+                          <el-text style="margin-left: 10px" type="warning" @click="submitLike(child.commentId)">
+                            <el-icon>
+                              <Star/>
+                            </el-icon>
+                            ({{ child.likeNum }})
+                          </el-text>
+                          <el-text style="margin-left: 10px" disabled v-if="child.createTime">
+                            <el-icon>
+                              <Timer/>
+                            </el-icon>
+                            {{ child.createTime }}
+                          </el-text>
+                        </div>
+
                         <horizontal-comment-submit-form-card
                             v-if="child.isShowSubmit"
                             :is-show-heading="false"

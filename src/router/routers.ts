@@ -5,6 +5,7 @@ import TagArticleListView from "@/views/TagArticleListView.vue";
 import HorizontalHome from "@/views/horizontalTheme/HorizontalHomeView.vue";
 import HorizontalFrendsView from "@/views/horizontalTheme/HorizontalFrendsView.vue";
 import HorizontalAboutMeView from "@/views/horizontalTheme/HorizontalAboutMeView.vue";
+import HorizontalArchiveView from "@/views/horizontalTheme/HorizontalArchiveView.vue";
 
 
 export const constantRoutes = [
@@ -18,6 +19,11 @@ export const constantRoutes = [
         path: '/web',
         component: HorizontalHome,
         meta: { title: '快跑小火车' }
+    },
+    {
+        path: "/casual/essay",
+        component: () => import("@/views/horizontalTheme/HorizontalCasualEssayView.vue"),
+        meta: { title: '随笔 | 快跑小火车' }
     },
     {
         path: '/web/detail/:articleId',
@@ -43,6 +49,11 @@ export const constantRoutes = [
         path: "/about",
         component: HorizontalAboutMeView,
         meta: { title: '关于我 | 快跑小火车' }
+    },
+    {
+        path: "/archivist",
+        component: HorizontalArchiveView,
+        meta: { title: '归档 | 快跑小火车' }
     },
     {
         path: "/categoryInfo",

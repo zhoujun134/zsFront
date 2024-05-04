@@ -21,15 +21,15 @@ defineProps({
   <el-card class="zj-home-friends-card" shadow="never">
     <div class="zj-home-friends-card-content">
       <div class="zj-home-friends-card-avatar-container">
-        <el-link :underline="false" href="/web">
+        <el-link :underline="false" :href="friendInfo.siteUrl">
           <el-avatar :src="friendInfo.logoUrl" alt="Avatar" class="zj-home-friends-card-avatar-img"/>
         </el-link>
       </div>
       <div class="zj-home-friends-card-info-container">
         <el-link :underline="false" :href="friendInfo.siteUrl">
-          <h3 class="zj-home-friends-card-title">{{friendInfo.title}}</h3>
+          <p class="zj-home-friends-card-title">{{friendInfo.title}}</p>
         </el-link>
-        <p class="description">{{ friendInfo.description }}</p>
+        <p class="zj-home-friends-card-description">{{ friendInfo.description }}</p>
       </div>
     </div>
   </el-card>

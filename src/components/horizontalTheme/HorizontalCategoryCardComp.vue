@@ -43,7 +43,7 @@ function onCategoryClick(row: any, column: any, cell: HTMLTableCellElement, even
 
 <template>
   <div class="zj-category-list-container">
-    <el-card>
+    <el-card v-if="categoryList">
       <template #header>
         <div class="card-header">
           <span>分类</span>

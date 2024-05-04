@@ -2,7 +2,7 @@ import request from "@/api/service";
 import type {IResult, Page} from "@/api/interface/IResult";
 import type {
     ArticleDetailReq,
-    ArticleListReq,
+    ArticleListReq, IArchiveArticle,
     IArticle,
     ICategory,
     ICommentInfo, ICommentLikeSubmitRequest, ICommentSubmitRequest,
@@ -151,6 +151,26 @@ export async function submitLikeComment(commentId: string) {
     })
 }
 
+export async function getArchiveMap() {
+    return await request({
+        url: '/api/article/archivist',
+        method: 'get',
+    }).then(resp => {
+        return JSON.parse(JSON.stringify(resp)) as IResult<IArchiveArticle[]>;
+    }).catch(error => {
+        let {message} = error;
+        ElMessage.error({
+            message: "系统开小差了！请稍后重试！" + message,
+            duration: 5 * 1000
+        })
+        const result: IResult<IArchiveArticle[]> = {
+            code: "-1",
+            message: "系统开小差了！请稍后重试！" + message,
+            data: [] as IArchiveArticle[]
+        };
+        return result;
+    })
+}
 
 export function getDefaultPageListIArticle(message: string): IResult<Page<IArticle>> {
     const defaultPage: Page<IArticle> = {

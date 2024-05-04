@@ -32,6 +32,7 @@
     /*margin-bottom: 0; !* 添加标题与描述之间的间距 *!*/
     /*color: dodgerblue;*/
     font-size: 18px;
+    margin-top: 0;
     /*display: flex;*/
 }
 .zj-home-comment-card-title-el-icon {

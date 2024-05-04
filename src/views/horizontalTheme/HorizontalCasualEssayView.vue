@@ -33,8 +33,7 @@ onMounted(async () => {
           <el-affix>
             <horizontal-header-comp active-index="2"/>
           </el-affix>
-          <article-detail :article-id="articleId"></article-detail>
-          <horizontal-comment-comp :article-id="articleId"/>
+          <horizontal-article-list-comp category-id="zs-suibi" category-name="随笔"/>
           <el-card class="zj-blog-footer">
             <p>© 2024- zbusTop-Z不殊</p>
             <p>京ICP备2023022073号-1</p>
@@ -43,15 +42,10 @@ onMounted(async () => {
         </div>
         <div class="zj-home-right-container">
           <el-affix :offset="80">
-          <search-card></search-card>
-            <div v-if="tocList.length > 0"
-                 class="zj-home-blog-toc-list-container">
-              <el-aside style="width: 100%">
-                <article-toc :toc-list="tocList"/>
-              </el-aside>
-            </div>
+            <search-card></search-card>
+            <horizontal-tag-card-comp/>
+            <horizontal-category-card-comp/>
           </el-affix>
-          <el-backtop :right="100" :bottom="100"/>
         </div>
       </el-main>
     </el-container>

@@ -15,14 +15,13 @@ defineProps<{
 
 <template>
   <el-card class="hidden-xs-only">
-    <el-tag
-        style="width: 100%"
+    <el-text
+        style="width: 100%; font-size: 24px; text-align: center"
         v-if="tocList.length > 0"
-        effect="dark"
-        type="primary">目录
-    </el-tag>
+        effect="dark"># 目录
+    </el-text>
     <el-tree
-        style="width: 100%;"
+        style="width: 100%; font-size: 16px; "
         :data="tocList"
         :props="defaultProps"
         @node-click="handleNodeClick"

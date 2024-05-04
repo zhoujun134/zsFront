@@ -53,3 +53,9 @@ export interface ICommentSubmitRequest {
 export interface ICommentLikeSubmitRequest {
     commentId: string
 }
+export interface IArchiveArticle {
+    articleId: string,
+    title: string,
+    createTime: string,
+    createTimeStr: string,
+}

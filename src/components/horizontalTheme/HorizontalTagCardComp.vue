@@ -36,7 +36,7 @@ const tagTypeList = ['info', 'primary', 'success', 'warning', 'danger'];
 
 <template>
   <div class="zj-tag-list-container">
-    <el-card>
+    <el-card v-if="tagList">
       <template #header>
         <div class="card-header">
           <span>标签</span>
@@ -44,7 +44,7 @@ const tagTypeList = ['info', 'primary', 'success', 'warning', 'danger'];
       </template>
       <el-tag v-for="(tag, index) in tagList"
               :key="tag.tagId"
-              class="text item"
+              style="margin-left: 5px; margin-top: 5px"
               :type="tagTypeList[index % 5]"
               @click="onTagClick"
       >

@@ -23,11 +23,11 @@ homeFriends().then(res => {
 <template>
   <div class="zj-home-container">
     <el-container>
-      <el-header style="height: auto">
-        <horizontal-header-comp/>
-      </el-header>
       <el-main class="zj-home-body-container">
         <div class="zj-home-main-container">
+          <el-affix>
+            <horizontal-header-comp active-index="4"/>
+          </el-affix>
           <el-card v-for="(friendList, key) in friendsGroup" :key="key"
                    class="zj-home-friends-card-group"
           >

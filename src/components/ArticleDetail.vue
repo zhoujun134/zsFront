@@ -37,7 +37,7 @@ onMounted(async () => {
   <div class="markdown-body" v-if="articleInfo">
 <!--    <el-card class="zj-detail-header-img-card">-->
 <!--    </el-card>-->
-    <el-card>
+    <el-card style="margin-top: 20px">
         <h1>{{ articleInfo.title }}</h1>
       <el-space :wrap="true" :size="10" :fill="true">
         <el-row>

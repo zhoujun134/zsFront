@@ -1,12 +1,11 @@
 <script setup lang="ts">
 import '../../assets/css/home.css'
 import SearchCard from "@/components/SearchCard.vue";
-import HorizontalHeaderComp from "@/components/horizontalTheme/HorizontalHeaderComp.vue";
-import HorizontalArticleListComp from "@/components/horizontalTheme/HorizontalArticleListComp.vue";
 import HorizontalCategoryCardComp from "@/components/horizontalTheme/HorizontalCategoryCardComp.vue";
 import HorizontalTagCardComp from "@/components/horizontalTheme/HorizontalTagCardComp.vue";
-import IntroductionCardComp from "@/components/horizontalTheme/card/IntroductionCardComp.vue";
 import HorizontalImageCardComp from "@/components/horizontalTheme/card/HorizontalImageCardComp.vue";
+import HorizontalHeaderComp from "@/components/horizontalTheme/HorizontalHeaderComp.vue";
+import HorizontalArchiveCardComp from "@/components/horizontalTheme/card/HorizontalArchiveCardComp.vue";
 
 </script>
 
@@ -16,10 +15,10 @@ import HorizontalImageCardComp from "@/components/horizontalTheme/card/Horizonta
       <el-main class="zj-home-body-container">
         <div class="zj-home-main-container">
           <el-affix>
-            <horizontal-header-comp/>
+            <horizontal-header-comp active-index="1"/>
           </el-affix>
-          <introduction-card-comp />
-          <horizontal-article-list-comp/>
+          <horizontal-archive-card-comp />
+
           <el-card class="zj-blog-footer">
             <p>© 2024- zbusTop-Z不殊</p>
             <p>京ICP备2023022073号-1</p>
