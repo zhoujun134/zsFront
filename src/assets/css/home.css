@@ -10,6 +10,7 @@
 .el-card.is-always-shadow, .el-card.is-hover-shadow:focus, .el-card.is-hover-shadow:hover {
     box-shadow: none;
 }
+
 /*星空背景*/
 body {
     /*background: url("https://zbus.top/upload/蓝色碎片飞舞-sehe.gif") repeat top left;*/
@@ -20,13 +21,16 @@ body {
 .el-card {
     width: 100%;
     filter: opacity(90%); /* 设置透明度 */
-    img* {
+
+    img * {
         filter: opacity(100%); /* 设置透明度 */
     }
 }
-.el-main{
+
+.el-main {
     --el-main-padding: 0;
 }
+
 a {
     /* 移除下划线 */
     text-decoration: none;
@@ -37,10 +41,12 @@ a:hover {
     text-decoration: none;
     color: cornflowerblue;
 }
+
 /* 未访问的链接为蓝色 */
 a:link, a:visited {
     color: cornflowerblue;
 }
+
 /* 鼠标悬停和点击时变为红色 */
 a:hover, a:active {
     color: cornflowerblue;
@@ -76,13 +82,14 @@ a:hover, a:active {
 .zj-home-main-introduce-card {
     margin-top: 2%;
     margin-left: 1%;
-    max-width: 49%
+    max-width: 49%;
 }
 
 @media screen and (min-width: 1599px) {
     .zj-home-main-container {
         width: 40% !important;
     }
+
     .zj-home-right-container {
         margin-left: 20px;
         width: 15% !important;
@@ -94,6 +101,7 @@ a:hover, a:active {
         margin-left: 20px;
         width: 15% !important;
     }
+
     .el-affix {
         width: 100% !important;
     }
@@ -103,18 +111,22 @@ a:hover, a:active {
     .zj-home-header-md {
         display: none !important;
     }
+
     .zj-home-header-xs {
         display: flex !important;
         justify-content: right;
         width: 100%;
+
         .el-menu-item {
             text-align: right;
         }
     }
+
     .zj-home-main-container {
         margin-top: 1%;
         width: 100% !important;
     }
+
     .zj-home-right-container {
         display: none !important;
     }
@@ -131,13 +143,15 @@ a:hover, a:active {
         margin-left: 0 !important;
         max-width: 100% !important;
     }
-    .zj-home-main-introduce-card-body{
+
+    .zj-home-main-introduce-card-body {
         display: block;
     }
 
     .el-main {
         --el-main-padding: 0;
     }
+
     .el-header {
         --el-header-padding: 0 0;
     }
@@ -166,6 +180,7 @@ a:hover, a:active {
 .zj-home-right-container {
     margin-left: 20px;
     width: 20%;
+
     .el-card {
         width: 100%;
         margin-top: 5%;
@@ -174,9 +189,11 @@ a:hover, a:active {
 
 .zj-home-blog-toc-list-container {
     width: 100%;
+
     .el-card {
         width: 100%;
     }
+
     /*margin-top: 10%;*/
 
     .zj-blog-toc-list-container {
@@ -194,10 +211,12 @@ a:hover, a:active {
     width: 100%;
     margin-top: 2%;
 }
+
 .zj-blog-p {
     text-indent: 2em;
     font-size: 16px
 }
+
 .zj-blog-tag {
     text-indent: 0;
     font-size: 16px
