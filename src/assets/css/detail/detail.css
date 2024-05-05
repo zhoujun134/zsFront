@@ -55,7 +55,7 @@ table.highlight {
     position: relative;
     padding-right: 10px;
     /*//padding-left: 10px;*/
-    line-height: 20px;
+    line-height: 24px;
     vertical-align: top;
 }
 
@@ -83,7 +83,7 @@ table.highlight {
     margin-top: 2%;
     p {
         text-indent: 2em;
-        line-height: 1.5;
+        line-height: 1.8;
     }
     li > p {
         text-indent: 0;
