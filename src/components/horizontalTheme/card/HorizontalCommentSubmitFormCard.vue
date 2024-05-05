@@ -85,15 +85,28 @@ function addComment() {
   emit('callParentMethod')
 }
 
-const submitCommentForm = (formEl: FormInstance | undefined) => {
-  if (!formEl) return
-  formEl.validate((valid) => {
+const submitCommentForm = async (formEl: FormInstance | undefined) => {
+  if (!formEl) {
+    // 如果 formEl 是 undefined，直接返回 false
+    return false;
+  }
+
+  try {
+    // 验证表单，这里假设 validate 方法返回 Promise<boolean>
+    const valid = await formEl.validate(); // 注意这里我们直接 await 验证结果，而不是传递回调函数
     if (valid) {
-      addComment()
+      // 如果验证成功，添加评论并返回 true
+      addComment();
+      return true;
     } else {
-      return false
+      // 如果验证失败，返回 false
+      return false;
     }
-  })
+  } catch (error) {
+    // 处理验证过程中可能发生的错误
+    console.error('表单验证过程中发生错误:', error);
+    return false;
+  }
 }
 </script>
 

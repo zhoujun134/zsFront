@@ -42,6 +42,11 @@ useHead({
     },
   ],
 })
+
+function deal(friendInfo: string | IFriendInfo[]) {
+  return friendInfo as IFriendInfo
+}
+
 </script>
 
 <template>
@@ -59,7 +64,7 @@ useHead({
             <div class="zj-home-friends-container">
               <horizontal-friend-card-comp
                   v-for="(friendInfo, key2) in friendList"
-                  :friend-info="friendInfo"/>
+                  :friend-info="deal(friendInfo)"/>
             </div>
           </el-card>
           <horizontal-comment-comp article-id="friends-page"/>
