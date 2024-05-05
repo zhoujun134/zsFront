@@ -79,10 +79,9 @@ function articleList(categoryId?: string, tagId?: string, keyword?: string, curr
   }
   getArticleList(request.value).then(result => {
     articlePageInfo.value = result.data;
-    if (categoryInfo.value.categoryId || tagInfo.value.tagId) {
+    if (categoryInfo.value.categoryId || tagInfo.value.tagId || keyword) {
       let elementById = document.getElementById("zj-home-main-introduce-card-body");
       if (elementById) {
-        console.log("11111")
         elementById.style.display = "none";
       }
     }
@@ -93,7 +92,6 @@ function articleList(categoryId?: string, tagId?: string, keyword?: string, curr
 
 function articleListPageChange(currentPage?: number) {
   request.value.pageNumber = currentPage ? currentPage : request.value.pageNumber;
-  console.log("request: after: " + JSON.stringify(request.value))
   getArticleList(request.value).then(result => {
     articlePageInfo.value = result.data;
   }).catch(error => {

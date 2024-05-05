@@ -9,7 +9,7 @@ import type {IArticle} from "@/api/interface/article/article";
 import {dealWithCopy, marked} from "@/api/views/zjMarked";
 import {Calendar} from "@element-plus/icons-vue";
 import {useHead} from "@unhead/vue";
-import { renderDOMHead } from '@unhead/dom'
+
 const props = defineProps<{
   articleId: string
 }>()
@@ -26,7 +26,9 @@ onMounted(async () => {
     articleInfo.value = result
     return result.content
   })
-  articleDetails.value = marked.parse(content)
+  if (content) {
+    articleDetails.value = marked.parse(content)
+  }
   setTimeout(() => {
     dealWithCopy()
   }, 500)
@@ -56,24 +58,26 @@ useHead({
 </script>
 
 <template>
-  <div class="markdown-body" v-if="articleInfo">
-<!--    <el-card class="zj-detail-header-img-card">-->
-<!--    </el-card>-->
-    <el-card style="margin-top: 20px">
-        <h1>{{ articleInfo.title }}</h1>
+  <div class="markdown-body zj-markdown-container" v-if="articleInfo">
+    <!--    <el-card class="zj-detail-header-img-card">-->
+    <!--    </el-card>-->
+    <el-card>
+      <h1>{{ articleInfo.title }}</h1>
       <el-space :wrap="true" :size="10" :fill="true">
         <el-row>
           <el-col :span="24">
             <el-text>
-              <el-icon><Calendar /></el-icon>
+              <el-icon>
+                <Calendar/>
+              </el-icon>
               创建时间: {{ articleInfo.createTime }}
             </el-text>
             <el-text v-if="articleInfo.categoryList"
-                    v-for="(category, index) in articleInfo.categoryList"
+                     v-for="(category, index) in articleInfo.categoryList"
             >{{ category.name }}
             </el-text>
             <el-text v-if="articleInfo.tagList"
-                    v-for="(tag,index) in articleInfo.tagList"
+                     v-for="(tag,index) in articleInfo.tagList"
             >{{ tag.tagName }}
             </el-text>
           </el-col>
@@ -88,6 +92,8 @@ useHead({
 </template>
 
 <style scoped>
-
+.zj-markdown-container {
+  margin-top: 10px;
+}
 </style>
 

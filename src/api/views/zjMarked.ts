@@ -41,7 +41,7 @@ const getLines = (text: string) => {
     return text.split(/\r\n|\r|\n/g);
 }
 
-export const marked: Marked = new Marked(
+const marked: Marked = new Marked(
     markedHighlight({
         langPrefix: 'hljs language-',
         highlight(code, lang) {
@@ -65,6 +65,7 @@ renderer.image = (href: string, title: string | null, text: string): string => {
 
 marked.setOptions({renderer: renderer})
 
+export {marked}
 /**
  * 给代码块儿的右边添加复制按钮
  */

@@ -6,7 +6,6 @@ import HorizontalCategoryCardComp from "@/components/horizontalTheme/HorizontalC
 import HorizontalHeaderComp from "@/components/horizontalTheme/HorizontalHeaderComp.vue";
 import ArticleDetail from "@/components/ArticleDetail.vue";
 import HorizontalCommentComp from "@/components/horizontalTheme/HorizontalCommentComp.vue";
-import HorizontalArticleListComp from "@/components/horizontalTheme/HorizontalArticleListComp.vue";
 import {useHead} from "@unhead/vue";
 useHead({
   title: '关于我 | 快跑小火车',
@@ -39,8 +38,8 @@ useHead({
           <el-affix>
             <horizontal-header-comp active-index="5"/>
           </el-affix>
-          <article-detail article-id="a37b457a97974cccbdabbfc224dac7bb" />
-          <horizontal-comment-comp article-id="a37b457a97974cccbdabbfc224dac7bb"/>
+          <article-detail article-id="409427aa9e274ad9939a283e259c8bf8" />
+          <horizontal-comment-comp article-id="409427aa9e274ad9939a283e259c8bf8"/>
           <el-card class="zj-blog-footer">
             <p>© 2024- zbusTop-Z不殊</p>
             <p>京ICP备2023022073号-1</p>
