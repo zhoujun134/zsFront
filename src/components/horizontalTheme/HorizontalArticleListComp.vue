@@ -143,7 +143,7 @@ function onCurrentPageChange(currentPage: number): void {
           <el-icon>
             <Timer/>
           </el-icon>
-          创建时间: {{ post.createTime }}
+          {{ post.createTime }}
         </el-text>
         <el-tag v-if="post.tagList"
                 style="margin-left: 10px"
