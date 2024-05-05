@@ -5,10 +5,15 @@
 <template>
   <div class="zj-home-main-introduce-card-body" id="zj-home-main-introduce-card-body">
     <el-card class="zj-home-main-introduce-card">
-      <template #header><h2>欢迎来到我的小站</h2>本博客是自己手写的</template>
+      <template #header><h2>🚄 欢迎来到我的小站</h2>本博客是自己从零倒一的实现。</template>
       <p class="zj-blog-p">
-        经历了一段时间的折腾，该网站终于测试上线了，其中从不会，到各种找资源，尝试了很多目前开源的一些博客框架，最终还是放弃了，
-        一是想自学一下前端，方便以后自己开发一些页面，二是为了做一些自定义的内容。因此便有了这个站点。
+        👨‍💻 对于博客的建设，经历了一段时间的折腾，反反复复可能都不能满意，其中尝试过，WordPress， hexo, docusaurus, halo 等这些开源的博客项目，
+        但是都多多少少有一些限制和不喜欢的地方，最终还是放弃了它们。
+      </p>
+      <p class="zj-blog-p">
+        因此, 便有了自己书写一个博客的想法。经过这段时间的倒腾，也算是把第一版的系统样子做了出来，
+        其中从前端的不会，到各种找资源，各种学习，css 的一些样式真的比较生疏，为什么要倒腾？
+        一是想自学一下前端，方便以后自己开发一些页面，二是为了做一些自定义的内容，方便自己以后能够将自己想表达的东西，呈现出来。因此，便有了这个站点。
       </p>
       <p class="zj-blog-p">
         <el-tag type="success" class="zj-blog-tag"> 前端:</el-tag>
