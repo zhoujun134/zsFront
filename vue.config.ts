@@ -1,4 +1,5 @@
 module.exports = {
+    publicPath: "/web/",
     devServer: {
         proxy: {
             '/api': { // 请求的代称，写在Axios里的BaseUrl
