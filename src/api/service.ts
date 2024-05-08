@@ -33,9 +33,10 @@ const hideLoading = () => {
         loading.close()
     }
 }
-
 // 请求拦截
 service.interceptors.request.use(config => {
+    let sessionId = localStorage.getItem("zs-blog-session-id");
+    config.headers.set("zs-blog-session-id", sessionId)
     showLoading()
     // 是否需要设置 token
     // config.headers['Authorization'] = 'Bearer ' + getToken() // 让每个请求携带自定义token 请根据实际情况自行修改
@@ -69,8 +70,9 @@ service.interceptors.request.use(config => {
 
 // 响应拦截器
 service.interceptors.response.use((res) => {
+        let sessionId = res.headers['zs-blog-session-id']
+        localStorage.setItem("zs-blog-session-id", sessionId)
         hideLoading()
-
         // console.log("response deal " + JSON.stringify(res.data))
         const result: IResult<object> = res.data as IResult<object>;
         // 未设置状态码则默认成功状态
