@@ -1,7 +1,8 @@
 import axios from 'axios';
 import {errorCodeType} from './utils/error-code-type';
-import {ElMessage, ElLoading} from 'element-plus';
+import {ElLoading} from 'element-plus';
 import type {IResult} from "@/api/interface/IResult";
+axios.defaults.withCredentials = true;
 // 创建axios实例
 const service = axios.create({
     // 服务接口请求
@@ -9,7 +10,8 @@ const service = axios.create({
     // baseURL: "http://localhost:8080/zs",
     // 超时设置
     timeout: 15000,
-    headers: {'Content-Type': 'application/json;charset=utf-8'}
+    headers: {'Content-Type': 'application/json;charset=utf-8'},
+    withCredentials: true,
 })
 
 let loading: any;
@@ -35,11 +37,6 @@ const hideLoading = () => {
 }
 // 请求拦截
 service.interceptors.request.use(config => {
-    let sessionId = localStorage.getItem("zs-blog-session-id");
-    if (sessionId) {
-        console.log("req: sessionId=", sessionId)
-        config.headers.set("zs-blog-session-id", sessionId)
-    }
     showLoading()
     // 是否需要设置 token
     // config.headers['Authorization'] = 'Bearer ' + getToken() // 让每个请求携带自定义token 请根据实际情况自行修改
@@ -73,12 +70,6 @@ service.interceptors.request.use(config => {
 
 // 响应拦截器
 service.interceptors.response.use((res) => {
-        let sessionId = res.headers['zs-blog-session-id']
-        console.log("sessionId: ", sessionId)
-        let cacheSessionId = localStorage.getItem("zs-blog-session-id");
-        if (cacheSessionId == null) {
-            localStorage.setItem("zs-blog-session-id", sessionId)
-        }
         hideLoading()
         // console.log("response deal " + JSON.stringify(res.data))
         const result: IResult<object> = res.data as IResult<object>;

@@ -16,7 +16,9 @@ import './assets/css/css-vars.css'
 
 import mavonEditor from 'mavon-editor'
 import 'mavon-editor/dist/css/index.css'
-
+import axios from 'axios'
+axios.defaults.withCredentials = true
+axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=utf-8';
 import { createHead } from '@unhead/vue'
 const head = createHead()
 
