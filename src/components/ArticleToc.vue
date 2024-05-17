@@ -23,7 +23,7 @@ defineProps<{
       </span>
     </template>
 
-    <el-scrollbar style="height: 60vh">
+    <el-scrollbar style="height: 50vh">
       <el-tree
           style="width: 100%; font-size: 16px; "
           :data="tocList"

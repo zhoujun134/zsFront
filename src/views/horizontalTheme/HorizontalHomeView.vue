@@ -10,15 +10,15 @@ import HorizontalImageCardComp from "@/components/horizontalTheme/card/Horizonta
 import {useHead} from "@unhead/vue";
 
 useHead({
-  title: '快跑小火车',
+  title: 'Z 不殊',
   meta: [
     {
-      name: '快跑小火车',
-      content: '快跑小火车, zhoujun134',
+      name: 'Z 不殊',
+      content: 'Z 不殊, 快跑小火车, zhoujun134',
     },
     {
       name: 'zhoujun134',
-      content: 'zhoujun134, 快跑小火车',
+      content: 'zhoujun134, Z 不殊',
     },
     {
       name: '手写博客',

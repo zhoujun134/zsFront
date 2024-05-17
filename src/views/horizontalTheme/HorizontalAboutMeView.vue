@@ -8,19 +8,19 @@ import ArticleDetail from "@/components/ArticleDetail.vue";
 import HorizontalCommentComp from "@/components/horizontalTheme/HorizontalCommentComp.vue";
 import {useHead} from "@unhead/vue";
 useHead({
-  title: '关于我 | 快跑小火车',
+  title: '关于我 | Z 不殊',
   meta: [
     {
-      name: '关于快跑小火车',
-      content: '快跑小火车, 关于快跑小火车的故事',
+      name: '关于Z 不殊',
+      content: 'Z 不殊, 关于Z 不殊的故事',
     },
     {
-      name: '快跑小火车',
-      content: '快跑小火车, zhoujun134',
+      name: 'Z 不殊',
+      content: 'Z 不殊, zhoujun134',
     },
     {
       name: 'zhoujun134',
-      content: 'zhoujun134, 快跑小火车',
+      content: 'zhoujun134, Z 不殊',
     },
     {
       name: '手写博客',

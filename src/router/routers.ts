@@ -13,17 +13,17 @@ export const constantRoutes = [
     {
         path: '/',
         redirect: '/web',
-        meta: { title: '快跑小火车' }
+        meta: { title: 'Z 不殊' }
     },
     {
         path: '/web',
         component: HorizontalHome,
-        meta: { title: '快跑小火车' }
+        meta: { title: 'Z 不殊' }
     },
     {
         path: "/casual/essay",
         component: () => import("@/views/horizontalTheme/HorizontalCasualEssayView.vue"),
-        meta: { title: '随笔 | 快跑小火车' }
+        meta: { title: '随笔 | Z 不殊' }
     },
     {
         path: '/web/detail/:articleId',
@@ -38,22 +38,22 @@ export const constantRoutes = [
     {
         path: "/editor",
         component: ArticleEditorView,
-        meta: { title: '编辑文章 | 快跑小火车' }
+        meta: { title: '编辑文章 | Z 不殊' }
     },
     {
         path: "/friends",
         component: HorizontalFrendsView,
-        meta: { title: '友链 | 快跑小火车' }
+        meta: { title: '友链 | Z 不殊' }
     },
     {
         path: "/about",
         component: HorizontalAboutMeView,
-        meta: { title: '关于我 | 快跑小火车' }
+        meta: { title: '关于我 | Z 不殊' }
     },
     {
         path: "/archivist",
         component: HorizontalArchiveView,
-        meta: { title: '归档 | 快跑小火车' }
+        meta: { title: '归档 | Z 不殊' }
     },
     {
         path: "/categoryInfo",
@@ -68,12 +68,12 @@ export const constantRoutes = [
     {
         path: "/login",
         component: () => import("@/components/LoginForm.vue"),
-        meta: { title: '登录 | 快跑小火车' }
+        meta: { title: '登录 | Z 不殊' }
     },
     {
         path: "/register",
         component: () => import("@/components/RegisterForm.vue"),
-        meta: { title: '注册 | 快跑小火车' }
+        meta: { title: '注册 | Z 不殊' }
     }
 ]
 

@@ -22,19 +22,19 @@ homeFriends().then(res => {
 import {useHead} from "@unhead/vue";
 
 useHead({
-  title: '友链 | 快跑小火车',
+  title: '友链 | Z 不殊',
   meta: [
     {
-      name: '快跑小火车友链',
-      content: '快跑小火车, 欢迎友链',
+      name: 'Z 不殊友链',
+      content: 'Z 不殊, 欢迎友链',
     },
     {
-      name: '快跑小火车',
-      content: '快跑小火车, zhoujun134',
+      name: 'Z 不殊',
+      content: 'Z 不殊, zhoujun134',
     },
     {
       name: 'zhoujun134',
-      content: 'zhoujun134, 快跑小火车',
+      content: 'zhoujun134, Z 不殊',
     },
     {
       name: '手写博客',

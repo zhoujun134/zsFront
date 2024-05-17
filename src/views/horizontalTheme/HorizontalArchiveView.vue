@@ -10,19 +10,19 @@ import HorizontalArchiveCardComp from "@/components/horizontalTheme/card/Horizon
 import {useHead} from "@unhead/vue";
 
 useHead({
-  title: '归档 | 快跑小火车',
+  title: '归档 | Z 不殊',
   meta: [
     {
-      name: '快跑小火车归档',
-      content: '快跑小火车, 归档',
+      name: 'Z 不殊',
+      content: 'Z 不殊, 归档',
     },
     {
-      name: '快跑小火车',
-      content: '快跑小火车, zhoujun134',
+      name: 'Z 不殊',
+      content: 'Z 不殊, zhoujun134',
     },
     {
       name: 'zhoujun134',
-      content: 'zhoujun134, 快跑小火车',
+      content: 'zhoujun134, Z 不殊',
     },
     {
       name: '手写博客',

@@ -6,10 +6,7 @@ import {onMounted, ref} from "vue";
 import {generateTocList, type TocItem} from "@/api/views/tocify";
 import HorizontalHeaderComp from "@/components/horizontalTheme/HorizontalHeaderComp.vue";
 import SearchCard from "@/components/SearchCard.vue";
-import HorizontalTagCardComp from "@/components/horizontalTheme/HorizontalTagCardComp.vue";
-import HorizontalCategoryCardComp from "@/components/horizontalTheme/HorizontalCategoryCardComp.vue";
 import HorizontalCommentComp from "@/components/horizontalTheme/HorizontalCommentComp.vue";
-import HorizontalArticleListComp from "@/components/horizontalTheme/HorizontalArticleListComp.vue";
 
 defineProps<{
   articleId: string
