@@ -63,9 +63,15 @@ renderer.image = (href: string, title: string | null, text: string): string => {
  </div>`;
 };
 
+renderer.list = function (body: string, ordered: boolean): string {
+    const type = ordered ? 'ol' : 'ul';
+    return `<${type} class="zj-custom-ul">${body}</${type}>`;
+};
+
 marked.setOptions({renderer: renderer})
 
 export {marked}
+
 /**
  * 给代码块儿的右边添加复制按钮
  */
