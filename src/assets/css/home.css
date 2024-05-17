@@ -189,8 +189,8 @@ a:hover, a:active {
 }
 
 .zj-home-blog-toc-list-container {
-    width: 100%;
-
+    width: 350px;
+    height: 100px;
     .el-card {
         width: 100%;
     }

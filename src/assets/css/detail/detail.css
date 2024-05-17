@@ -1,5 +1,5 @@
 .zj-copy-btn {
-/*/ / position: absolute; !* 使用绝对定位 *!*/
+    /*/ / position: absolute; !* 使用绝对定位 *!*/
     background-color: slategray; /* 背景颜色 */
     color: white; /* 文本颜色 */
     float: right;
@@ -11,7 +11,7 @@
 
 /* 当鼠标悬停在按钮上时的样式 */
 .zj-copy-btn:hover {
-/*/ / background-color: bisque; !* 变暗背景色 *!*/
+    /*/ / background-color: bisque; !* 变暗背景色 *!*/
     opacity: 0.9; /* 提高透明度 */
 }
 
@@ -27,9 +27,9 @@ table.highlight {
     width: 1%;
     min-width: 20px;
     padding-right: 10px;
-/*/ / padding-left: 10 px;*/
+    /*/ / padding-left: 10 px;*/
     font-size: 12px;
-/*/ / line-height: 20 px;*/
+    /*/ / line-height: 20 px;*/
     color: #6e7781;
     text-align: right;
     white-space: normal;
@@ -71,8 +71,10 @@ table.highlight {
     background-size: cover;
     filter: opacity(100%); /* 设置透明度 */
 }
+
 .zj-detail-header-content-card {
     /*opacity: inherit;*/
+
     a {
         color: black;
         opacity: inherit;
@@ -81,10 +83,12 @@ table.highlight {
 
 .zj-detail-content-card {
     margin-top: 2%;
+
     p {
         text-indent: 2em;
         line-height: 1.8;
     }
+
     li > p {
         text-indent: 0;
     }
@@ -98,14 +102,16 @@ table.highlight {
     img {
         width: 80%;
     }
+
     img:hover {
         border: #6e7781 1px solid;
     }
 }
 
-.zj-article-header-category-tag{
+.zj-article-header-category-tag {
     margin-top: 2%;
 }
+
 .zj-custom-ul {
     /*text-indent: 2em;*/
     line-height: 1.8;
