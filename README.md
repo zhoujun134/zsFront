@@ -1,40 +1,54 @@
-# zjVue
+![img](https://img.zbus.top/zbus/blog202405070816095.jpg)
 
-This template should help get you started developing with Vue 3 in Vite.
+👨‍💻 对于博客的建设，经历了一段时间的折腾，反反复复可能都不能满意，其中尝试过，WordPress， hexo, docusaurus, halo 等这些开源的博客项目， 但是都多多少少有一些限制和不喜欢的地方，最终还是放弃了它们。
 
-## Recommended IDE Setup
+因此, 便有了自己书写一个博客的想法。经过这段时间的倒腾，也算是把第一版的系统样子做了出来， 其中从前端的不会，到各种找资源，各种学习，css 的一些样式真的比较生疏，为什么要倒腾？ 一是想自学一下前端，方便以后自己开发一些页面，二是为了做一些自定义的内容，方便自己以后能够将自己想表达的东西，呈现出来。因此，便有了这个站点。
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+**前端:** 基于 vue3 + typeScript + element-plus 构建。[点击访问源代码](https://zbus.top)
 
-## Type Support for `.vue` Imports in TS
+**后端:** 基于 java 语言编写，使用了 springboot 构建，数据库采用的是 Mysql + redis。[点击访问源代码](https://zbus.top)
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+Notice: 由于前端页面是边学边写的，可能会存在一些 bug，欢迎大家评论和留言，我将不断改进，也希望大家共同进步。
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
+这个博客主要包含了 PC 端和移动端的页面构建，其中 PC 端的大致形式如下图:
 
-1. Disable the built-in TypeScript Extension
-    1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-    2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+![mnggiflab-video-to-gif](https://img.zbus.top/zbus/blog202405072254203.gif)
 
-## Customize configuration
+移动端的大致形式:
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+![移动端](https://img.zbus.top/zbus/blog202405070823007.gif)
 
-## Project Setup
+## 目前已经实现的功能
 
-```sh
-npm install
-```
+### 2024年5月7日 （update）
 
-### Compile and Hot-Reload for Development
+- [x] 文章列表
+- [x] 归档
+- [x] 文章分类卡片
+- [x] 文章标签卡片
+- [x] 文章评论
+- [x] 发布文章（目前支持发布文章），现有缺乏编辑文章的按钮。
+- [x] 友链页
+- [x] 搜索框卡片
 
-```sh
-npm run dev
-```
+## 待优化项
 
-### Type-Check, Compile and Minify for Production
+### 前端项目：
 
-```sh
-npm run build
-```
+- [ ] 页面渲染的优化，ts 文件规整一下，
+- [ ] 访问数统计卡片
+- [ ] markdown 内容页，优化代码显示区域的格式。
+
+
+### 后端项目
+
+- [ ] 访问监控（异常请求的监控，防止恶意请求）
+- [ ] 评论提交限制，防止恶意提交。
+- [ ] 实现定时任务，按天和周进行周报总结网站的访问日志。
+- [ ] 接入 AI 的能力，动态渲染部分内容。
+
+❤️ ❤️ ❤️
+
+以上就是当前这个项目所实现的一部分内容，欢迎大家评论和指正！
+
+![img](https://img.zbus.top/zbus/blog202405070838514.jpg)
