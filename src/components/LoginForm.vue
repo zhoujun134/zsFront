@@ -1,30 +1,59 @@
 <template>
-  <el-container class="zj-blog-login-container">
-    <div>
-      <el-form
-          label-width="auto"
-          :model="form"
-          style="max-width: 600px"
-      >
-        <el-form-item label="用户名">
-          <el-input v-model="form.username" />
-        </el-form-item>
-        <el-form-item label="密码">
-          <el-input v-model="form.password" type="password" :show-password="true" />
-        </el-form-item>
-        <el-form-item label="       ">
-          <el-button type="primary" @click="handleLogin">登录</el-button>
-          <router-link to="/register" style="margin-left: 20px" >注册</router-link>
-        </el-form-item>
-      </el-form>
-      <el-card v-if="loginForm.loginId">
-        <p>loginId: {{ loginForm.loginId }}</p>
-        <p>tokenName: {{ loginForm.tokenName }}</p>
-        <p>tokenValue: {{ loginForm.tokenValue }}</p>
-        <el-link href="/web">回到首页</el-link>
-      </el-card>
-    </div>
-  </el-container>
+  <div class="zj-home-container">
+    <el-container>
+      <el-main class="zj-home-body-container">
+        <div class="zj-home-main-container">
+          <el-affix>
+            <horizontal-header-comp/>
+          </el-affix>
+          <div class="zj-blog-login-container">
+            <el-form
+                label-width="auto"
+                :model="form"
+                style="max-width: 600px"
+            >
+              <div class="zj-blog-login-form-item">
+                <el-text>
+                  <h1>欢迎前辈回家，快登入解锁更多功能吧！</h1>
+                </el-text>
+              </div>
+              <el-form-item label="用户名">
+                <el-input v-model="form.username" />
+              </el-form-item>
+              <el-form-item label="密码">
+                <el-input v-model="form.password" type="password" :show-password="true" />
+              </el-form-item>
+              <el-form-item label="       ">
+                <el-button type="primary" @click="handleLogin">登录</el-button>
+                <el-button type="primary">
+                  <router-link to="/register" style="color: white">注册</router-link>
+                </el-button>
+              </el-form-item>
+            </el-form>
+            <el-card v-if="loginForm.loginId">
+              <p>loginId: {{ loginForm.loginId }}</p>
+              <p>tokenName: {{ loginForm.tokenName }}</p>
+              <p>tokenValue: {{ loginForm.tokenValue }}</p>
+              <el-link href="/web">回到首页</el-link>
+            </el-card>
+          </div>
+
+          <el-card class="zj-blog-footer">
+            <p>© 2024- zbusTop-Z不殊</p>
+            <p>京ICP备2023022073号-1</p>
+            <p>京公网安备11010802044104号</p>
+          </el-card>
+        </div>
+        <div class="zj-home-right-container">
+          <el-affix :offset="80">
+            <search-card></search-card>
+            <horizontal-tag-card-comp/>
+            <horizontal-category-card-comp/>
+          </el-affix>
+        </div>
+      </el-main>
+    </el-container>
+  </div>
 
 </template>
 
@@ -35,6 +64,13 @@ import {login} from "@/api/homeApi";
 import type ILoginForm from "@/api/interface/user/ILoginForm";
 import type IZjToken from "@/api/interface/token/Itoken";
 import {ElMessage} from "element-plus";
+import HorizontalImageCardComp from "@/components/horizontalTheme/card/HorizontalImageCardComp.vue";
+import SearchCard from "@/components/SearchCard.vue";
+import HorizontalHeaderComp from "@/components/horizontalTheme/HorizontalHeaderComp.vue";
+import HorizontalTagCardComp from "@/components/horizontalTheme/HorizontalTagCardComp.vue";
+import HorizontalArticleListComp from "@/components/horizontalTheme/HorizontalArticleListComp.vue";
+import HorizontalCategoryCardComp from "@/components/horizontalTheme/HorizontalCategoryCardComp.vue";
+import IntroductionCardComp from "@/components/horizontalTheme/card/IntroductionCardComp.vue";
 
 let userToken: IZjToken = reactive({
   tokenName: "",
@@ -124,8 +160,23 @@ function handleLogin() {
 
 .zj-blog-login-container {
   display: flex;
-  height: 100vh;
+  height: 80vh;
   justify-content: center;
   align-items: center; /* 垂直居中 */
+  margin-top: 2%;
+  background: url("/bg-xinxin.gif") repeat top left;
+  animation: twinkling 40s infinite alternate linear;
+}
+
+.zj-blog-login-form-item {
+  width: 100%;
+  min-width: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center; /* 垂直居中 */
+  .el-form-item {
+    width: 100%;
+    min-width: 400px;
+  }
 }
 </style>
