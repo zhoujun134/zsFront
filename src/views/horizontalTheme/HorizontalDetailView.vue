@@ -3,7 +3,7 @@
 import ArticleDetail from "@/components/ArticleDetail.vue";
 import ArticleToc from "@/components/ArticleToc.vue";
 import {onMounted, ref} from "vue";
-import {generateTocList, type TocItem} from "@/api/views/tocify";
+import {generateTocList, type TocItem, tocTotalLength} from "@/api/views/tocify";
 import HorizontalHeaderComp from "@/components/horizontalTheme/HorizontalHeaderComp.vue";
 import SearchCard from "@/components/SearchCard.vue";
 import HorizontalCommentComp from "@/components/horizontalTheme/HorizontalCommentComp.vue";
@@ -41,7 +41,7 @@ onMounted(async () => {
         <div class="zj-home-right-container">
           <el-affix :offset="80">
           <search-card></search-card>
-            <div v-if="tocList.length > 0"
+            <div v-if="tocTotalLength > 3"
                  class="zj-home-blog-toc-list-container">
               <el-aside style="width: 100%">
                 <article-toc :toc-list="tocList"/>
