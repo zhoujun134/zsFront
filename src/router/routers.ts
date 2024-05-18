@@ -1,7 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import ArticleEditorView from "@/views/admin/ArticleEditorView.vue";
-import CategoryArticleListView from "@/views/CategoryArticleListView.vue";
-import TagArticleListView from "@/views/TagArticleListView.vue";
 import HorizontalHome from "@/views/horizontalTheme/HorizontalHomeView.vue";
 import HorizontalFrendsView from "@/views/horizontalTheme/HorizontalFrendsView.vue";
 import HorizontalAboutMeView from "@/views/horizontalTheme/HorizontalAboutMeView.vue";
@@ -31,11 +29,6 @@ export const constantRoutes = [
         props: true
     },
     {
-        path: "/detail/:articleId",
-        component: () => import("@/views/ArticleDetailView.vue"),
-        props: true
-    },
-    {
         path: "/editor",
         component: ArticleEditorView,
         meta: { title: '编辑文章 | Z 不殊' }
@@ -54,16 +47,6 @@ export const constantRoutes = [
         path: "/archivist",
         component: HorizontalArchiveView,
         meta: { title: '归档 | Z 不殊' }
-    },
-    {
-        path: "/categoryInfo",
-        component: CategoryArticleListView,
-        props: true
-    },
-    {
-        path: "/tagInfo",
-        component: TagArticleListView,
-        props: true
     },
     {
         path: "/login",

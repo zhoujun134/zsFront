@@ -127,10 +127,10 @@ function onCurrentPageChange(currentPage: number): void {
              :key="post.articleId"
     >
       <router-link :to="'/web/detail/' + post.articleId">
-        <h2 class="post-title">{{ post.title }}</h2>
+        <h2 class="zj-post-title">{{ post.title }}</h2>
       </router-link>
       <p v-if="post.articleAbstract"
-         class="post-content">
+         class="zj-post-content">
         {{ post.articleAbstract }}
       </p>
       <hr v-if="post.articleAbstract"/>
@@ -138,6 +138,7 @@ function onCurrentPageChange(currentPage: number): void {
         <el-text v-if="post.createTime"
                  style="margin-left: 10px"
                  effect="dark"
+                 type="primary"
                  round
         >
           <el-icon>
@@ -149,7 +150,7 @@ function onCurrentPageChange(currentPage: number): void {
                 style="margin-left: 10px"
                 v-for="item in post.tagList"
                 :key="item.tagId"
-                type="primary"
+                type="danger"
                 effect="dark"
                 round
         >

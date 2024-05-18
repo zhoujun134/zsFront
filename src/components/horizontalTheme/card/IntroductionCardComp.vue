@@ -28,7 +28,7 @@
         由于前端页面是边学边写的，可能会存在一些 bug，欢迎大家评论和留言，我将不断改进，也希望大家共同进步。
       </p>
       <p class="zj-blog-p">如果您想了解更多，
-        <el-link :underline="false" href="/about" style="font-size: 16px; text-indent: 0">请点击跳转</el-link>
+        <el-link :underline="false" href="/web/detail/061fdace32984832a5c7297ea3ac05ca" style="font-size: 16px; text-indent: 0">请点击跳转</el-link>
       </p>
     </el-card>
   </div>

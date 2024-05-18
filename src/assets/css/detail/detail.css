@@ -95,17 +95,26 @@ table.highlight {
 }
 
 .zj-blog-content-img-container {
-    display: table-cell;
+    display: flex;
     text-align: center;
     vertical-align: middle;
+    justify-content: center;
 
     img {
-        width: 80%;
+        zoom: 90%;
+        max-width: 90%;
+        /*max-height: 100vh;*/
+        vertical-align: middle;
+        justify-content: center;
     }
 
     img:hover {
         border: #6e7781 1px solid;
     }
+}
+
+.zj-blog-content-img-big {
+
 }
 
 .zj-article-header-category-tag {
@@ -115,4 +124,16 @@ table.highlight {
 .zj-custom-ul {
     /*text-indent: 2em;*/
     line-height: 1.8;
+}
+
+.zj-post-title {
+    color: cornflowerblue;
+}
+
+.zj-post-title:hover {
+    color: black;
+}
+
+.zj-post-content {
+    text-indent: 2em;
 }

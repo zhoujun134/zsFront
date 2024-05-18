@@ -68,7 +68,6 @@ const commentRules = reactive<FormRules<ICommentSubmitRequest>>({
 })
 
 function addComment() {
-  console.log(JSON.stringify(request.value))
   submitComment(request.value).then(res => {
     if (res.code === "0") {
       ElMessage.success({

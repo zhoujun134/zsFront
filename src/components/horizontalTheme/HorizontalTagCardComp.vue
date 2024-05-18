@@ -21,10 +21,6 @@ function getHomeTagList() {
   })
 }
 
-function onTagClick(evt: MouseEvent) {
-  // console.log(evt)
-}
-
 // 页面挂载时，渲染
 onMounted(() => {
   getHomeTagList()
@@ -46,7 +42,6 @@ const tagTypeList = ['info', 'primary', 'success', 'warning', 'danger'];
               :key="tag.tagId"
               style="margin-left: 5px; margin-top: 5px"
               :type="tagTypeList[index % 5]"
-              @click="onTagClick"
       >
         <el-link :href="'/web?tagId=' + tag.tagId +'&tagName=' + tag.tagName" :underline="false">
           {{ tag.tagName }}

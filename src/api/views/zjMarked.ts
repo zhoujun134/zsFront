@@ -53,16 +53,17 @@ const marked: Marked = new Marked(
 )
 // 自定义渲染器
 const renderer = new marked.Renderer();
+// 针对图片的处理
 renderer.image = (href: string, title: string | null, text: string): string => {
-    return ` <div class="zj-blog-content-img-container"> 
- <img class="el-image" style=" vertical-align: middle;"
-                  src="${href}" 
-                  title="${title}" 
-                  alt="${text}"
-                />
- </div>`;
+    return ` 
+<div class="zj-blog-content-img-container">  
+    <img class="zj-blog-content-img" src="${href}" title="${title}" alt="${text}" 
+     />  
+</div> 
+`;
 };
 
+// 针对 列表的处理
 renderer.list = function (body: string, ordered: boolean): string {
     const type = ordered ? 'ol' : 'ul';
     return `<${type} class="zj-custom-ul">${body}</${type}>`;

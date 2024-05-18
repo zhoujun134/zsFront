@@ -9,6 +9,7 @@ import {useDark} from "@vueuse/core";
 
 const isDark = useDark()
 const toggleDark = useToggle(isDark)
+
 const props = defineProps({
   activeIndex: {
     type: String,
