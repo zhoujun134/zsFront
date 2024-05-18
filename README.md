@@ -1,3 +1,4 @@
+# 预览效果 [点击跳转](https://zbus.top)
 ![img](https://img.zbus.top/zbus/blog202405070816095.jpg)
 
 👨‍💻 对于博客的建设，经历了一段时间的折腾，反反复复可能都不能满意，其中尝试过，WordPress， hexo, docusaurus, halo 等这些开源的博客项目， 但是都多多少少有一些限制和不喜欢的地方，最终还是放弃了它们。
