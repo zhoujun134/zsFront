@@ -16,7 +16,7 @@ const tocList = ref([] as TocItem[])
 onMounted(async () => {
   setTimeout(() => {
     tocList.value = generateTocList();
-    console.log(tocList.value.length)
+    console.log("tocTotalLength: ", tocTotalLength)
   }, 500)
 })
 
