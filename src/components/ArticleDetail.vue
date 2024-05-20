@@ -17,21 +17,18 @@ const props = defineProps<{
 const articleDetails = ref()
 const articleInfo = ref<IArticle>()
 
-onMounted(async () => {
-  const content = await getArticleDetail({
+onMounted(() => {
+  getArticleDetail({
     articleId: props.articleId
   }).then(res => {
     const result = res.data as IArticle
     // articleDetails.value = result.content
     articleInfo.value = result
-    return result.content
+    if (result.content) {
+      articleDetails.value = marked.parse(result.content)
+      dealWithCopy()
+    }
   })
-  if (content) {
-    articleDetails.value = marked.parse(content)
-  }
-  setTimeout(() => {
-    dealWithCopy()
-  }, 500)
 })
 
 useHead({
