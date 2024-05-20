@@ -1,9 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import ArticleEditorView from "@/views/admin/ArticleEditorView.vue";
-import HorizontalHome from "@/views/horizontalTheme/HorizontalHomeView.vue";
-import HorizontalFrendsView from "@/views/horizontalTheme/HorizontalFrendsView.vue";
-import HorizontalAboutMeView from "@/views/horizontalTheme/HorizontalAboutMeView.vue";
-import HorizontalArchiveView from "@/views/horizontalTheme/HorizontalArchiveView.vue";
+import HorizontalHomeView from "@/views/horizontalTheme/HorizontalHomeView.vue";
 
 
 export const constantRoutes = [
@@ -15,7 +11,7 @@ export const constantRoutes = [
     },
     {
         path: '/web',
-        component: HorizontalHome,
+        component: HorizontalHomeView,
         meta: { title: 'Z 不殊' }
     },
     {
@@ -30,22 +26,22 @@ export const constantRoutes = [
     },
     {
         path: "/editor",
-        component: ArticleEditorView,
+        component: () => import("@/components/ArticleEditor.vue"),
         meta: { title: '编辑文章 | Z 不殊' }
     },
     {
         path: "/friends",
-        component: HorizontalFrendsView,
+        component: () => import("@/views/horizontalTheme/HorizontalFrendsView.vue"),
         meta: { title: '友链 | Z 不殊' }
     },
     {
         path: "/about",
-        component: HorizontalAboutMeView,
+        component: () => import("@/views/horizontalTheme/HorizontalAboutMeView.vue"),
         meta: { title: '关于我 | Z 不殊' }
     },
     {
         path: "/archivist",
-        component: HorizontalArchiveView,
+        component: () => import("@/views/horizontalTheme/HorizontalArchiveView.vue"),
         meta: { title: '归档 | Z 不殊' }
     },
     {
