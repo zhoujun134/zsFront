@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HorizontalHomeView from "@/views/horizontalTheme/HorizontalHomeView.vue";
+import HorizontalDetailView from "@/views/horizontalTheme/HorizontalDetailView.vue";
 
 
 export const constantRoutes = [
@@ -21,7 +22,7 @@ export const constantRoutes = [
     },
     {
         path: '/web/detail/:articleId',
-        component: () => import("@/views/horizontalTheme/HorizontalDetailView.vue"),
+        component: HorizontalDetailView,
         props: true
     },
     {
