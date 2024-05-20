@@ -30,7 +30,7 @@ function onClickSearch() {
 </script>
 
 <template>
-  <el-card>
+  <el-card class="zj-home-blog-search-container">
     <el-form :model="searchForm"
              @submit.native.prevent>
       <el-form-item prop="searchKeyWord">

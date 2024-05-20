@@ -40,7 +40,9 @@ onMounted( () => {
         </div>
         <div class="zj-home-right-container">
           <el-affix :offset="80">
-          <search-card></search-card>
+            <div class="zj-home-blog-search-container">
+              <search-card></search-card>
+            </div>
             <div v-if="tocTotalLength > 3"
                  class="zj-home-blog-toc-list-container">
               <el-aside style="width: 100%">

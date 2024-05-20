@@ -24,7 +24,8 @@ export default defineConfig({
         proxy: {
             '/api': {
                 // 实际请求地址
-                target: 'http://localhost:8080/zs',
+                // target: 'http://localhost:8080/zs',
+                target: 'https://zbus.top',
                 // 是否允许跨域，在本地会创建一个虚拟的服务器
                 // 然后发送请求数据
                 changeOrigin: true,

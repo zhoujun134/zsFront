@@ -14,7 +14,7 @@ defineProps<{
 </script>
 
 <template>
-  <el-card class="hidden-xs-only" style="width: 150%">
+  <el-card class="hidden-xs-only" style="width: 400px">
     <template #header style="padding: 0">
       <span style="font-size: 24px; text-align: left"
          v-if="tocList.length > 0"
