@@ -56,7 +56,7 @@ function onClick(url: string) {
           :ellipsis="false"
 
       >
-        <el-sub-menu index="2-" @click="onClick('/web')">
+        <el-sub-menu index="2-">
           <template #title>
             <el-link :underline="false" href="/web">
               <img
