@@ -17,7 +17,7 @@ onMounted(async () => {
   setTimeout(() => {
     tocList.value = generateTocList();
     console.log("tocTotalLength: ", tocTotalLength)
-  }, 500)
+  }, 2000)
 })
 
 </script>
