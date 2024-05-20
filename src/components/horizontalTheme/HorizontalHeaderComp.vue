@@ -56,7 +56,7 @@ onMounted(() => {
                   style="width: 50px"
                   src="/logo.png"
                   alt="zBus logo"
-              /><span style="margin-left: 10px;">快跑小火车</span>
+              /><span style="margin-left: 10px;">Z 不殊</span>
             </el-link>
           </template>
           <el-menu-item index="2-1">
