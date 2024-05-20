@@ -13,7 +13,7 @@ defineProps<{
 }>()
 
 const tocList = ref([] as TocItem[])
-onMounted(async () => {
+onMounted( () => {
   setTimeout(() => {
     tocList.value = generateTocList();
     console.log("tocTotalLength: ", tocTotalLength)
