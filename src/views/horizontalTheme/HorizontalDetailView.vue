@@ -17,7 +17,7 @@ onMounted( () => {
   setTimeout(() => {
     tocList.value = generateTocList();
     console.log("tocTotalLength: ", tocTotalLength)
-  }, 2000)
+  }, 800)
 })
 
 </script>
@@ -38,13 +38,9 @@ onMounted( () => {
             <p>京公网安备11010802044104号</p>
           </el-card>
         </div>
-        <div class="zj-home-right-container">
+        <div class="zj-home-right-container" v-if="tocTotalLength > 3">
           <el-affix :offset="80">
-            <div class="zj-home-blog-search-container">
-              <search-card></search-card>
-            </div>
-            <div v-if="tocTotalLength > 3"
-                 class="zj-home-blog-toc-list-container">
+            <div class="zj-home-blog-toc-list-container">
               <el-aside style="width: 100%">
                 <article-toc :toc-list="tocList"/>
               </el-aside>

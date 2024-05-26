@@ -1,6 +1,6 @@
 <script setup lang="ts">
 
-import ArticleEditor from "@/components/ArticleEditor.vue";
+import ArticleEditor from "@/components/ArticleEditorForm.vue";
 </script>
 
 <template>

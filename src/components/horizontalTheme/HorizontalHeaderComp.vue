@@ -1,12 +1,14 @@
 <script setup lang="ts">
 
-import {onMounted, ref} from "vue";
+import {inject, onMounted, type Ref, ref} from "vue";
 import type {IHomeInfo} from "@/api/interface/home";
 import {homeIndex} from "@/api/homeApi";
-import {useRoute} from "vue-router";
+import {useRoute, useRouter} from "vue-router";
 import {useToggle} from '@vueuse/shared'
 import {useDark} from "@vueuse/core";
 import {Search, Star, Switch} from "@element-plus/icons-vue";
+import HorizontalSearchComp from "@/components/horizontalTheme/HorizontalSearchComp.vue";
+import {searchShowVariable} from "@/api/gloablConfig";
 
 const isDark = useDark()
 const toggleDark = useToggle(isDark)
@@ -42,6 +44,32 @@ function onClick(url: string) {
   if (url) {
     window.location.href = url;
   }
+}
+
+let searchShowVar: Ref<boolean> = inject("searchShowVariable", ref<boolean>(false))
+
+import {ElMessage, ElMessageBox} from 'element-plus'
+
+const router = useRouter();
+const openSearch = () => {
+  ElMessageBox.prompt('请输入您想要搜索的内容', '全站搜索', {
+    confirmButtonText: '搜索',
+    cancelButtonText: '取消',
+    inputValidator: (data: string): boolean => !!(data && data.length >= 3),
+    inputErrorMessage: '至少输入3个字符',
+  }).then(({value}) => {
+    router.push({
+      path: "/web",
+      query: {
+        keyword: value
+      }
+    });
+  }).catch(() => {
+        ElMessage({
+          type: 'info',
+          message: '已取消搜索',
+        })
+      })
 }
 </script>
 
@@ -84,9 +112,12 @@ function onClick(url: string) {
           <el-menu-item index="2-6" @click="onClick('https://afdian.net/a/zbusTop')">
             <el-link :underline="false" href="https://afdian.net/a/zbusTop">为我发电</el-link>
           </el-menu-item>
-          <el-menu-item index="2-7" @click="toggleDark()">
-<!--            <span v-if="isDark">white</span>-->
-<!--            <span v-if="!isDark">dark</span>-->
+          <el-menu-item index="2-7" @click="openSearch" align="right">
+            <el-icon>
+              <Search/>
+            </el-icon>
+          </el-menu-item>
+          <el-menu-item index="2-8" @click="toggleDark()">
             <el-icon>
               <Switch/>
             </el-icon>
@@ -131,20 +162,19 @@ function onClick(url: string) {
       <el-menu-item index="6" @click="onClick('https://afdian.net/a/zbusTop')">
         <el-link :underline="false" href="https://afdian.net/a/zbusTop">为我发电</el-link>
       </el-menu-item>
-      <el-menu-item index="7" @click="toggleDark()">
+      <el-menu-item index="7" @click="openSearch" align="right">
+        <el-icon>
+          <Search/>
+        </el-icon>
+      </el-menu-item>
+      <el-menu-item index="8" @click="toggleDark()">
         <el-icon>
           <Switch/>
         </el-icon>
       </el-menu-item>
-<!--      <el-menu-item index="8" @click="toggleDark()" align="right">-->
-<!--        <el-icon>-->
-<!--          <Search/>-->
-<!--        </el-icon>-->
-<!--      </el-menu-item>-->
     </el-menu>
   </div>
 </template>
 
 <style scoped>
-
 </style>

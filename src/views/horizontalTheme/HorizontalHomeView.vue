@@ -8,6 +8,7 @@ import HorizontalTagCardComp from "@/components/horizontalTheme/HorizontalTagCar
 import IntroductionCardComp from "@/components/horizontalTheme/card/IntroductionCardComp.vue";
 import HorizontalImageCardComp from "@/components/horizontalTheme/card/HorizontalImageCardComp.vue";
 import {useHead} from "@unhead/vue";
+import HorizontalSearchComp from "@/components/horizontalTheme/HorizontalSearchComp.vue";
 
 useHead({
   title: 'Z 不殊',
@@ -50,7 +51,6 @@ useHead({
         </div>
         <div class="zj-home-right-container">
           <el-affix :offset="80">
-            <search-card></search-card>
             <horizontal-tag-card-comp/>
             <horizontal-category-card-comp/>
           </el-affix>

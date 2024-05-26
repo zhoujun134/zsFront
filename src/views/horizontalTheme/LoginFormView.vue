@@ -46,7 +46,6 @@
         </div>
         <div class="zj-home-right-container">
           <el-affix :offset="80">
-            <search-card></search-card>
             <horizontal-tag-card-comp/>
             <horizontal-category-card-comp/>
           </el-affix>
@@ -128,20 +127,11 @@ function handleLogin() {
     // 更新变量值
     if (zjToken.tokenValue && zjToken.tokenName) {
       loginForm.value = zjToken
-      // loginForm.value.tokenName = zjToken.tokenName
-      // loginForm.value.tokenValue = zjToken.tokenValue
-      // loginForm.value.tokenTimeout = zjToken.tokenTimeout
-      // loginForm.value.sessionTimeout = zjToken.sessionTimeout
-      // loginForm.value.loginId = zjToken.loginId
     }
     // 更新 token 信息
     const tokenValue = localStorage.getItem("zsUserToken")
     if (tokenValue) {
       localStorage.setItem("zsUserToken", JSON.stringify(zjToken))
-      ElMessage.success({
-        message: "欢迎登录当前系统",
-        duration: 5 * 1000
-      })
     }
   }).catch(error => {
     console.log("登录遇到异常了！" + error)

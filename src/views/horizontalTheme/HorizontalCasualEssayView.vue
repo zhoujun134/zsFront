@@ -58,7 +58,6 @@ useHead({
         </div>
         <div class="zj-home-right-container">
           <el-affix :offset="80">
-            <search-card></search-card>
             <horizontal-tag-card-comp/>
             <horizontal-category-card-comp/>
           </el-affix>

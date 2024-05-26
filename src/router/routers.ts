@@ -27,7 +27,7 @@ export const constantRoutes = [
     },
     {
         path: "/editor",
-        component: () => import("@/components/ArticleEditor.vue"),
+        component: () => import("@/components/ArticleEditorForm.vue"),
         meta: { title: '编辑文章 | Z 不殊' }
     },
     {
@@ -47,12 +47,12 @@ export const constantRoutes = [
     },
     {
         path: "/login",
-        component: () => import("@/components/LoginForm.vue"),
+        component: () => import("@/views/horizontalTheme/LoginFormView.vue"),
         meta: { title: '登录 | Z 不殊' }
     },
     {
         path: "/register",
-        component: () => import("@/components/RegisterForm.vue"),
+        component: () => import("@/views/horizontalTheme/RegisterFormView.vue"),
         meta: { title: '注册 | Z 不殊' }
     }
 ]
