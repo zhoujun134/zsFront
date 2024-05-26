@@ -7,7 +7,7 @@ import '../assets/css/detail/detail.css'
 import {getArticleDetail} from "@/api/articleApi";
 import type {IArticle} from "@/api/interface/article/article";
 import {dealWithCopy, marked} from "@/api/views/zjMarked";
-import {Calendar} from "@element-plus/icons-vue";
+import {Calendar, UserFilled} from "@element-plus/icons-vue";
 import {useHead} from "@unhead/vue";
 
 const props = defineProps<{
@@ -58,14 +58,20 @@ useHead({
 
 <template>
   <div class="markdown-body zj-markdown-container" v-if="articleInfo">
-    <!--    <el-card class="zj-detail-header-img-card">-->
-    <!--    </el-card>-->
+<!--        <el-card class="zj-detail-header-img-card">-->
+<!--        </el-card>-->
     <el-card>
       <h1>{{ articleInfo.title }}</h1>
       <el-space :wrap="true" :size="10" :fill="true">
         <el-row>
           <el-col :span="24">
             <el-text>
+              <el-icon>
+                <UserFilled/>
+              </el-icon>
+              创建人: zhouJun134
+            </el-text>
+            <el-text style="margin-left: 10px">
               <el-icon>
                 <Calendar/>
               </el-icon>

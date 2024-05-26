@@ -49,7 +49,7 @@ table.highlight {
     font-size: 16px;
     /*//color: #24292f;*/
     word-wrap: anywhere;
-    white-space: pre;
+    white-space: break-spaces;
 }
 
 .blob-code {

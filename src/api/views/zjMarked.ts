@@ -32,7 +32,12 @@ export const lineNumbers = (content: string, lang: string): string => {
                 <td class="blob-code blob-code-inner">${text}</td>
               </tr>`;
     }
-    return `<table class="hljs highlight">${html}</table>`;
+    return `<table class="hljs highlight">
+             <div style="width: 90%">
+                    <pre>${html}</pre>
+             </div>
+                    
+            </table>`;
 }
 
 // 根据换行符或回车分割成字符串数组
