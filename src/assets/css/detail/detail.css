@@ -4,7 +4,7 @@
     color: white; /* 文本颜色 */
     float: right;
     cursor: pointer; /* 更改鼠标指针样式 */
-    border-radius: 4px; /* 圆角效果 */
+    border-radius: 4px; /* 圆角效果 */;
     width: 45px;
     height: 30px;
     margin-left: 5px;
@@ -29,7 +29,7 @@ table.highlight {
     min-width: 20px;
     padding-right: 10px;
     /*/ / padding-left: 10 px;*/
-    font-size: 12px;
+    font-size: 16px;
     /*/ / line-height: 20 px;*/
     color: #6e7781;
     text-align: right;
@@ -46,7 +46,7 @@ table.highlight {
 .blob-code-inner {
     display: table-cell;
     overflow: visible;
-    font-size: 12px;
+    font-size: 16px;
     /*//color: #24292f;*/
     word-wrap: anywhere;
     white-space: pre;
