@@ -7,6 +7,7 @@
     border-radius: 4px; /* 圆角效果 */
     width: 45px;
     height: 30px;
+    margin-left: 5px;
 }
 
 /* 当鼠标悬停在按钮上时的样式 */

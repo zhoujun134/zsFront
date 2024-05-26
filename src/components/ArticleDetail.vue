@@ -26,7 +26,9 @@ onMounted(() => {
     articleInfo.value = result
     if (result.content) {
       articleDetails.value = marked.parse(result.content)
-      dealWithCopy()
+      setTimeout(() => {
+        dealWithCopy()
+      }, 500)
     }
   })
 })
