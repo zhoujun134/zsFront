@@ -33,7 +33,7 @@ export const lineNumbers = (content: string, lang: string): string => {
               </tr>`;
     }
     return `<table class="hljs highlight">
-             <div style="width: 90%">
+             <div>
                     <pre>${html}</pre>
              </div>
                     
