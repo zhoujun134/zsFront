@@ -82,7 +82,7 @@ const openSearch = () => {
           mode="vertical"
           :popper-offset="5"
           :ellipsis="false"
-
+          :close-on-click-outside="true"
       >
         <el-sub-menu index="2-">
           <template #title>
@@ -134,6 +134,7 @@ const openSearch = () => {
         :default-active="activeIndex"
         mode="horizontal"
         :ellipsis="false"
+        :close-on-click-outside="true"
     >
       <el-menu-item index="0" @click="onClick('/web')">
         <el-link :underline="false" href="/web">
