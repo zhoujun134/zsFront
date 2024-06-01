@@ -5,9 +5,7 @@ import ArticleToc from "@/components/ArticleToc.vue";
 import {onMounted, ref} from "vue";
 import {generateTocList, type TocItem, tocTotalLength} from "@/api/views/tocify";
 import HorizontalHeaderComp from "@/components/horizontalTheme/HorizontalHeaderComp.vue";
-import SearchCard from "@/components/SearchCard.vue";
 import HorizontalCommentComp from "@/components/horizontalTheme/HorizontalCommentComp.vue";
-
 defineProps<{
   articleId: string
 }>()
@@ -16,7 +14,6 @@ const tocList = ref([] as TocItem[])
 onMounted( () => {
   setTimeout(() => {
     tocList.value = generateTocList();
-    console.log("tocTotalLength: ", tocTotalLength)
   }, 800)
 })
 

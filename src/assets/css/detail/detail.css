@@ -138,3 +138,9 @@ table.highlight {
 .zj-post-content {
     text-indent: 2em;
 }
+
+.medium-zoom-overlay,
+.medium-zoom-image--opened {
+    z-index: 10000;
+    background-color: #6e7781;
+}

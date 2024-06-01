@@ -1,14 +1,17 @@
 <script lang="ts" setup>
 
-import {onMounted, ref} from 'vue';
+import {nextTick, onMounted, ref} from 'vue';
 //引入markdown样式
-import 'highlight.js/styles/atom-one-dark.css'
 import '../assets/css/detail/detail.css'
 import {getArticleDetail} from "@/api/articleApi";
 import type {IArticle} from "@/api/interface/article/article";
-import {dealWithCopy, marked} from "@/api/views/zjMarked";
 import {Calendar, UserFilled} from "@element-plus/icons-vue";
 import {useHead} from "@unhead/vue";
+import mediumZoom from "medium-zoom";
+import Prism from "prismjs" //代码高亮插件的core
+import "prismjs/plugins/line-numbers/prism-line-numbers.js"//行号插件
+import "prismjs/themes/prism-okaidia.css"//高亮主题
+import "prismjs/plugins/line-numbers/prism-line-numbers.css"//行号插件的样式
 
 const props = defineProps<{
   articleId: string
@@ -17,22 +20,27 @@ const props = defineProps<{
 const articleDetails = ref()
 const articleInfo = ref<IArticle>()
 
-onMounted(() => {
-  getArticleDetail({
+onMounted(async() => {
+  await getArticleDetail({
     articleId: props.articleId
   }).then(res => {
     const result = res.data as IArticle
     // articleDetails.value = result.content
     articleInfo.value = result
     if (result.content) {
-      articleDetails.value = marked.parse(result.content)
-      setTimeout(() => {
-        dealWithCopy()
-      }, 500)
+      articleDetails.value = result.content
+      nextTick(() => {
+
+        mediumZoom('[data-zoomable]', {
+          // 打开之后非图片区域显示黑色
+          background: 'rgba(0, 0, 0, 0.6)'
+        });
+        // 全局代码高亮(必须等获取数据之后，代码高亮才能生效，也可以用定时器定时)
+        Prism.highlightAll()
+      })
     }
   })
 })
-
 useHead({
   title: '详情 | Z 不殊',
   meta: [
@@ -93,6 +101,7 @@ useHead({
       <div v-html="articleDetails" class="markdown-body"></div>
       <el-backtop :right="100" :bottom="100" style="color: black"/>
     </el-card>
+
   </div>
 </template>
 

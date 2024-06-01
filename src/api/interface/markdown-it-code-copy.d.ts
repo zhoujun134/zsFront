@@ -6,3 +6,5 @@ declare module 'markdown-it-sup';
 declare module 'markdown-it-task-lists';
 declare module 'markdown-it-toc-done-right';
 
+declare module 'prismjs';
+

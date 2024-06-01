@@ -7,6 +7,7 @@ export interface IArticle {
     headerImageUrl?: string
     tagList?: ITag[]
     categoryList?: ICategory[]
+    tocString?: string
 }
 
 export interface ICategory {
