@@ -20,7 +20,7 @@ const props = defineProps<{
 const articleDetails = ref()
 const articleInfo = ref<IArticle>()
 
-onMounted(async() => {
+onMounted(async () => {
   await getArticleDetail({
     articleId: props.articleId
   }).then(res => {
@@ -30,7 +30,6 @@ onMounted(async() => {
     if (result.content) {
       articleDetails.value = result.content
       nextTick(() => {
-
         mediumZoom('[data-zoomable]', {
           // 打开之后非图片区域显示黑色
           background: 'rgba(0, 0, 0, 0.6)'
@@ -60,14 +59,26 @@ useHead({
       name: '手写博客',
       content: '手写博客, vue3 ts java',
     },
+    {
+      name: "description",
+      content: () => {
+        if (articleInfo.value?.articleAbstract) {
+          return articleInfo.value?.articleAbstract;
+        }
+        if (articleInfo.value?.title) {
+          return articleInfo.value?.title;
+        }
+        return props.articleId;
+      }
+    }
   ],
 })
 </script>
 
 <template>
   <div class="markdown-body zj-markdown-container" v-if="articleInfo">
-<!--        <el-card class="zj-detail-header-img-card">-->
-<!--        </el-card>-->
+    <!--        <el-card class="zj-detail-header-img-card">-->
+    <!--        </el-card>-->
     <el-card>
       <h1>{{ articleInfo.title }}</h1>
       <el-space :wrap="true" :size="10" :fill="true">
